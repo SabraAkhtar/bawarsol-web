@@ -189,7 +189,7 @@ export const AI_PROJECTS: PortfolioProject[] = [
     description: 'An autonomous multi-agent system that ingests unstructured quarterly earnings, cross-references transaction ledgers, and highlights compliance anomalies.',
     impactMetric: '78% reduction in audit review cycles with 99.4% audit precision',
     technologies: ['LangGraph', 'Python', 'FastAPI', 'Qdrant', 'Claude 3.5 Sonnet'],
-    imageUrl: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80',
+    imageUrl: '/images/portfolio/blog_agentic_ai_1786722488737.jpg',
   },
   {
     id: 'ai-2',
@@ -199,7 +199,7 @@ export const AI_PROJECTS: PortfolioProject[] = [
     description: 'Zero-hallucination RAG system connecting 500,000+ clinical trial documents with dense vector search and reranking.',
     impactMetric: 'Instant clinical evidence retrieval for 12,000+ medical staff',
     technologies: ['Pinecone', 'Gemini 1.5 Pro', 'Cohere Rerank', 'TypeScript', 'Next.js'],
-    imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80',
+    imageUrl: '/images/portfolio/blog_rag_systems_1786722517577.jpg',
   },
   {
     id: 'ai-3',
@@ -209,7 +209,7 @@ export const AI_PROJECTS: PortfolioProject[] = [
     description: 'High-speed camera vision pipeline deployed on NVIDIA TensorRT edge hardware to detect sub-millimeter surface flaws at 120 FPS.',
     impactMetric: 'Zero defective units shipped over 1.2M manufactured parts',
     technologies: ['YOLOv11', 'TensorRT', 'OpenCV', 'PyTorch', 'C++'],
-    imageUrl: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80',
+    imageUrl: '/images/portfolio/blog_computer_vision_1786722558547.jpg',
   },
   {
     id: 'ai-4',
@@ -219,7 +219,7 @@ export const AI_PROJECTS: PortfolioProject[] = [
     description: 'End-to-end bill-of-lading document OCR, customs manifest auto-classification, and predictive carrier route assignment microservice.',
     impactMetric: 'Automated 92% of daily manual entry across 45 logistics hubs',
     technologies: ['Playwright', 'Python', 'FastAPI', 'Llama-3', 'PostgreSQL'],
-    imageUrl: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
+    imageUrl: '/images/portfolio/ai_logiflow_1786723866291.jpg',
   },
   {
     id: 'ai-5',
@@ -229,7 +229,7 @@ export const AI_PROJECTS: PortfolioProject[] = [
     description: 'An interactive voice and text learning assistant that guides students through math and science concepts using step-by-step Socratic dialogue.',
     impactMetric: 'Over 250,000 active tutoring sessions with 4.9/5 satisfaction',
     technologies: ['React', 'Node.js', 'Gemini 1.5 Flash', 'WebSockets', 'Tailwind CSS'],
-    imageUrl: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80',
+    imageUrl: '/images/portfolio/blog_generative_ai_1786722600545.jpg',
   },
   {
     id: 'ai-6',
@@ -239,7 +239,7 @@ export const AI_PROJECTS: PortfolioProject[] = [
     description: 'Gradient boosted ensemble pricing models combined with automated lead scoring and tour booking workflows.',
     impactMetric: '97.8% valuation accuracy across $1.4B in property assets',
     technologies: ['XGBoost', 'Scikit-Learn', 'Python', 'React', 'Prisma'],
-    imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80',
+    imageUrl: '/images/portfolio/ai_propyield_1786723918598.jpg',
   },
 ];
 

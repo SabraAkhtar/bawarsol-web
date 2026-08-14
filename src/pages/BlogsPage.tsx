@@ -178,7 +178,7 @@ export const BlogsPage: React.FC<BlogsPageProps> = ({ onNavigate, onSelectBlog }
                     src={featuredBlog.coverImage}
                     alt={featuredBlog.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    onError={(e) => { (e.target as HTMLImageElement).src = 'https://picsum.photos/seed/blog-featured/1200/600'; }}
+                    onError={(e) => { (e.target as HTMLImageElement).src = '/images/portfolio/blog_agentic_ai_1786722488737.jpg'; }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                 </div>
@@ -219,7 +219,7 @@ export const BlogsPage: React.FC<BlogsPageProps> = ({ onNavigate, onSelectBlog }
                         src={blog.coverImage}
                         alt={blog.title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                        onError={(e) => { (e.target as HTMLImageElement).src = `https://picsum.photos/seed/${blog.id}/800/400`; }}
+                        onError={(e) => { (e.target as HTMLImageElement).src = '/images/portfolio/blog_agentic_ai_1786722488737.jpg'; }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                       <span className="absolute top-4 left-4 px-3 py-1.5 rounded-full text-xs font-bold bg-black/70 text-[#00F0FF] border border-[#00F0FF]/30 backdrop-blur-sm">

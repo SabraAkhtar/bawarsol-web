@@ -155,7 +155,7 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ slug, onNavigate
             src={blog.coverImage}
             alt={blog.title}
             className="w-full h-full object-cover"
-            onError={(e) => { (e.target as HTMLImageElement).src = `https://picsum.photos/seed/${blog.slug}/1200/500`; }}
+            onError={(e) => { (e.target as HTMLImageElement).src = '/images/portfolio/blog_agentic_ai_1786722488737.jpg'; }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/60 via-transparent to-transparent" />
         </div>
