@@ -154,7 +154,11 @@ export const BlogsPage: React.FC<BlogsPageProps> = ({ onNavigate, onSelectBlog }
 
                   <div className="flex flex-wrap items-center gap-5 text-sm text-slate-400 pt-4 border-t border-white/10">
                     <span className="flex items-center gap-2 font-bold text-slate-200">
-                      <User className="w-4 h-4 text-[#00F0FF]" />
+                      {featuredBlog.authorAvatar ? (
+                        <img src={featuredBlog.authorAvatar} alt={featuredBlog.author} className="w-5 h-5 rounded-full object-cover border border-[#00F0FF]/30" />
+                      ) : (
+                        <User className="w-4 h-4 text-[#00F0FF]" />
+                      )}
                       {featuredBlog.author}
                     </span>
                     <span className="flex items-center gap-2">
@@ -239,7 +243,11 @@ export const BlogsPage: React.FC<BlogsPageProps> = ({ onNavigate, onSelectBlog }
 
                   <div className="px-7 pb-7 border-t border-white/5 pt-4 flex items-center justify-between text-sm">
                     <span className="font-bold text-slate-300 text-xs flex items-center gap-2">
-                      <User className="w-3.5 h-3.5 text-[#00F0FF]" />
+                      {blog.authorAvatar ? (
+                        <img src={blog.authorAvatar} alt={blog.author} className="w-5 h-5 rounded-full object-cover border border-[#00F0FF]/30" />
+                      ) : (
+                        <User className="w-3.5 h-3.5 text-[#00F0FF]" />
+                      )}
                       {blog.author}
                     </span>
                     <span className="flex items-center gap-1.5 font-bold text-[#00F0FF] group-hover:gap-2.5 transition-all text-xs">

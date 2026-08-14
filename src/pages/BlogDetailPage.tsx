@@ -109,9 +109,13 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ slug, onNavigate
           {/* Author & Meta Line */}
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-4 border-t border-b border-white/10 py-5">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-[#00F0FF]/10 border border-[#00F0FF]/20 flex items-center justify-center font-bold text-[#00F0FF] text-base shadow-inner">
-                {blog.author.charAt(0)}
-              </div>
+              {blog.authorAvatar ? (
+                <img src={blog.authorAvatar} alt={blog.author} className="w-12 h-12 rounded-full object-cover border border-[#00F0FF]/30 shadow-inner" />
+              ) : (
+                <div className="w-12 h-12 rounded-full bg-[#00F0FF]/10 border border-[#00F0FF]/20 flex items-center justify-center font-bold text-[#00F0FF] text-base shadow-inner">
+                  {blog.author.charAt(0)}
+                </div>
+              )}
               <div>
                 <div className="font-extrabold text-white text-sm">{blog.author}</div>
                 <div className="text-slate-400 text-xs mt-0.5">{blog.authorRole}</div>

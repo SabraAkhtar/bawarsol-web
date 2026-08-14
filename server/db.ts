@@ -83,8 +83,9 @@ Agentic AI represents a fundamental shift from simple prompt-response interactio
 By deploying autonomous agentic pipelines in financial document verification and supply chain log auditing, BawarSol clients have achieved up to **78% reduction in human verification time** while maintaining 99.4% precision.
     `,
     category: 'Agentic AI',
-    author: 'Dr. Zeeshan Bawar',
-    authorRole: 'Founder & Principal AI Architect',
+    author: 'Muhammad Idrees',
+    authorRole: 'Lead AI Engineer',
+    authorAvatar: '/images/team/muhammad_idrees.png',
     date: '2026-08-01',
     readTime: '6 min read',
     coverImage: '/images/blogs/blog_agentic_ai_1786722488737.jpg',
@@ -110,8 +111,9 @@ Standard Retrieval Augmented Generation (RAG) often fails in enterprise settings
 Through these optimizations, BawarSol knowledge systems consistently score >94% on domain accuracy metrics.
     `,
     category: 'RAG Systems',
-    author: 'Aamir Khan',
-    authorRole: 'Lead Machine Learning Engineer',
+    author: 'Muhammad Idrees',
+    authorRole: 'Lead AI Engineer',
+    authorAvatar: '/images/team/muhammad_idrees.png',
     date: '2026-07-22',
     readTime: '8 min read',
     coverImage: '/images/blogs/blog_rag_systems_1786722517577.jpg',
@@ -133,8 +135,9 @@ Industrial manufacturing demands sub-millisecond anomaly detection on fast-movin
 BawarSol engineers train custom micro-YOLO and Vision Transformer models tailored specifically for industrial camera feeds. By quantizing models to INT8 precision and deploying via NVIDIA TensorRT on edge hardware, we achieve **120 FPS processing** on high-resolution camera feeds without sacrificing defect recall.
     `,
     category: 'Computer Vision',
-    author: 'Elena Vance',
-    authorRole: 'Computer Vision Lead',
+    author: 'Muhammad Idrees',
+    authorRole: 'Lead AI Engineer',
+    authorAvatar: '/images/team/muhammad_idrees.png',
     date: '2026-07-10',
     readTime: '5 min read',
     coverImage: '/images/blogs/blog_computer_vision_1786722558547.jpg',
@@ -157,13 +160,44 @@ Choosing between hosted frontier models and self-hosted open weights is one of t
 - **Latency & Cost**: Domain-specific fine-tuned 8B parameter models can deliver up to **5x lower inference latency** and **10x lower token costs** at scale.
     `,
     category: 'Generative AI',
-    author: 'Dr. Zeeshan Bawar',
-    authorRole: 'Founder & Principal AI Architect',
+    author: 'Muhammad Idrees',
+    authorRole: 'Lead AI Engineer',
+    authorAvatar: '/images/team/muhammad_idrees.png',
     date: '2026-06-28',
     readTime: '7 min read',
     coverImage: '/images/blogs/blog_generative_ai_1786722600545.jpg',
     published: true,
     featured: false,
+  },
+  {
+    id: 'blog-5',
+    slug: 'impact-of-premium-web-graphic-design',
+    title: 'The Impact of Premium Web & Graphic Design on Brand Identity',
+    excerpt: 'How modern UI/UX principles and professional graphic design can elevate your business presence and conversion rates.',
+    content: `
+# The Impact of Premium Web & Graphic Design on Brand Identity
+
+In today's digital landscape, your website and visual branding are often the first interaction a potential client has with your business. At BawarSol, our creative team ensures that this first impression is powerful, engaging, and aligned with your core values.
+
+## Merging Aesthetics with Functionality
+
+1. **Responsive Web Design**: We build websites that not only look stunning on all devices but also guide the user seamlessly through the conversion funnel.
+2. **Brand Consistency**: From logo design to marketing flyers, maintaining a cohesive visual identity builds trust and recognition.
+3. **Interactive UI/UX**: Utilizing modern libraries like Framer Motion and Next.js, we create experiences that feel alive and responsive to user input.
+
+## The BawarSol Approach
+
+Whether it's an e-commerce platform or a corporate landing page, our holistic approach to web and graphic design ensures that your digital footprint stands out in a crowded market.
+    `,
+    category: 'Web & Graphics',
+    author: 'Sabra Akhtar',
+    authorRole: 'Creative Director',
+    authorAvatar: '/images/team/sabra_akhtar.jpg',
+    date: '2026-08-14',
+    readTime: '4 min read',
+    coverImage: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1200&q=80',
+    published: true,
+    featured: true,
   },
 ];
 
