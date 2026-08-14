@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { SERVICES_DATA } from '../data/servicesData';
-import { Bot, Sparkles, Database, Eye, MessageSquareText, Workflow, BrainCircuit, Code2, ArrowRight, CheckCircle, Cpu, Search } from 'lucide-react';
+import { Bot, Sparkles, Database, Eye, MessageSquareText, Workflow, BrainCircuit, Code2, ArrowRight, CheckCircle, Cpu, Search, Palette, Image, Layout } from 'lucide-react';
 import { GlobalCTA } from '../components/GlobalCTA';
 
 interface ServicesPageProps {
@@ -19,6 +19,9 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
     Workflow: <Workflow className="w-8 h-8 text-[#00F0FF]" />,
     BrainCircuit: <BrainCircuit className="w-8 h-8 text-[#00F0FF]" />,
     Code2: <Code2 className="w-8 h-8 text-[#00F0FF]" />,
+    Palette: <Palette className="w-8 h-8 text-[#00F0FF]" />,
+    Image: <Image className="w-8 h-8 text-[#00F0FF]" />,
+    Layout: <Layout className="w-8 h-8 text-[#00F0FF]" />,
   };
 
   const filteredServices = SERVICES_DATA.filter((s) =>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, Sparkles, Bot, Database, Eye, BrainCircuit, Code2, Shield, CheckCircle2, TrendingUp, Cpu, Workflow, MessageSquareText } from 'lucide-react';
+import { ArrowRight, Sparkles, Bot, Database, Eye, BrainCircuit, Code2, Shield, CheckCircle2, TrendingUp, Cpu, Workflow, MessageSquareText, Palette, Image, Layout } from 'lucide-react';
 import { SERVICES_DATA } from '../data/servicesData';
 import { INDUSTRIES_DATA } from '../data/industriesData';
 import { PORTFOLIO_PROJECTS } from '../data/portfolioData';
@@ -18,14 +18,17 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
   };
 
   const serviceIconMap: Record<string, React.ReactNode> = {
-    Bot: <Bot className="w-6 h-6 text-[#00F0FF]" />,
-    Sparkles: <Sparkles className="w-6 h-6 text-[#00F0FF]" />,
-    Database: <Database className="w-6 h-6 text-[#00F0FF]" />,
-    Eye: <Eye className="w-6 h-6 text-[#00F0FF]" />,
-    MessageSquareText: <MessageSquareText className="w-6 h-6 text-[#00F0FF]" />,
-    Workflow: <Workflow className="w-6 h-6 text-[#00F0FF]" />,
-    BrainCircuit: <BrainCircuit className="w-6 h-6 text-[#00F0FF]" />,
-    Code2: <Code2 className="w-6 h-6 text-[#00F0FF]" />,
+    Bot: <Bot className="w-5 h-5 text-[#00F0FF]" />,
+    Sparkles: <Sparkles className="w-5 h-5 text-[#00F0FF]" />,
+    Database: <Database className="w-5 h-5 text-[#00F0FF]" />,
+    Eye: <Eye className="w-5 h-5 text-[#00F0FF]" />,
+    MessageSquareText: <MessageSquareText className="w-5 h-5 text-[#00F0FF]" />,
+    Workflow: <Workflow className="w-5 h-5 text-[#00F0FF]" />,
+    BrainCircuit: <BrainCircuit className="w-5 h-5 text-[#00F0FF]" />,
+    Code2: <Code2 className="w-5 h-5 text-[#00F0FF]" />,
+    Palette: <Palette className="w-5 h-5 text-[#00F0FF]" />,
+    Image: <Image className="w-5 h-5 text-[#00F0FF]" />,
+    Layout: <Layout className="w-5 h-5 text-[#00F0FF]" />,
   };
 
   return (
