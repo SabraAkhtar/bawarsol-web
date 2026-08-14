@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { WEB_PROJECTS, AI_PROJECTS } from '../data/portfolioData';
-import { ExternalLink, Sparkles, Globe, BrainCircuit } from 'lucide-react';
+import { WEB_PROJECTS, AI_PROJECTS, DESIGN_PROJECTS } from '../data/portfolioData';
+import { ExternalLink, Sparkles, Globe, BrainCircuit, Palette } from 'lucide-react';
 import { GlobalCTA } from '../components/GlobalCTA';
 
 interface PortfolioPageProps {
@@ -8,9 +8,9 @@ interface PortfolioPageProps {
 }
 
 export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigate }) => {
-  const [activeTab, setActiveTab] = useState<'web' | 'ai'>('web');
+  const [activeTab, setActiveTab] = useState<'web' | 'ai' | 'design'>('web');
 
-  const projects = activeTab === 'web' ? WEB_PROJECTS : AI_PROJECTS;
+  const projects = activeTab === 'web' ? WEB_PROJECTS : activeTab === 'ai' ? AI_PROJECTS : DESIGN_PROJECTS;
 
   return (
     <div className="min-h-screen bg-[#050505] text-[#F0F0F0] pt-24 pb-12">
@@ -44,6 +44,10 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigate }) => {
               <span>AI Case Studies</span>
             </div>
             <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.04] border border-white/10">
+              <span className="text-[#00F0FF] font-bold text-sm">{DESIGN_PROJECTS.length}+</span>
+              <span>Design Projects</span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.04] border border-white/10">
               <span className="text-[#00F0FF] font-bold text-sm">$50M+</span>
               <span>Revenue Impact</span>
             </div>
@@ -54,7 +58,7 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigate }) => {
       {/* Tab Switcher */}
       <section className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3 mb-10">
+          <div className="flex flex-wrap items-center gap-3 mb-10">
             <button
               onClick={() => setActiveTab('web')}
               className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm transition-all ${
@@ -77,6 +81,18 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigate }) => {
             >
               <BrainCircuit className="w-4 h-4" />
               <span>AI Systems ({AI_PROJECTS.length})</span>
+            </button>
+
+            <button
+              onClick={() => setActiveTab('design')}
+              className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm transition-all ${
+                activeTab === 'design'
+                  ? 'bg-[#00F0FF] text-black shadow-lg shadow-[#00F0FF]/25'
+                  : 'bg-white/[0.04] text-slate-400 border border-white/10 hover:border-[#00F0FF]/40 hover:text-[#00F0FF]'
+              }`}
+            >
+              <Palette className="w-4 h-4" />
+              <span>Graphic Design ({DESIGN_PROJECTS.length})</span>
             </button>
           </div>
 

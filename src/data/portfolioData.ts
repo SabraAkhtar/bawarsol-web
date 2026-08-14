@@ -243,5 +243,66 @@ export const AI_PROJECTS: PortfolioProject[] = [
   },
 ];
 
+// ── Graphic Design Portfolio ──────────────────────────────────────────────────
+import gdFlyer1 from '../assets/images/gd_flyer_study.jpg';
+import gdShowcase from '../assets/images/gd_showcase_web.jpg';
+import gdEcom1 from '../assets/images/gd_ecom1.jpg';
+import gdEcom2 from '../assets/images/gd_ecom2.jpg';
+import gdFlyer2 from '../assets/images/gd_flyer2.jpg';
+
+export const DESIGN_PROJECTS: PortfolioProject[] = [
+  {
+    id: 'gd-1',
+    title: 'Study in Turkey — Educational Flyer',
+    category: 'Graphic Design',
+    clientIndustry: 'Education / Consultancy',
+    description: 'Professional A4 promotional flyer designed for ScholarMate International Consultant. Features bold typography, structured info layout, and a strong call-to-action.',
+    impactMetric: 'High-conversion print & digital flyer',
+    technologies: ['Adobe Photoshop', 'Adobe Illustrator'],
+    imageUrl: gdFlyer1,
+  },
+  {
+    id: 'gd-2',
+    title: 'BawarSol Digital — Website Showcase Banner',
+    category: 'Graphic Design',
+    clientIndustry: 'Digital Agency',
+    description: 'Multi-website showcase banner displaying 6 professional web design projects. Designed for social media promotion and client presentations.',
+    impactMetric: 'Agency portfolio social media banner',
+    technologies: ['Adobe Photoshop', 'Figma'],
+    imageUrl: gdShowcase,
+  },
+  {
+    id: 'gd-3',
+    title: 'E-Commerce Website Design — Gig Banner',
+    category: 'Graphic Design',
+    clientIndustry: 'E-Commerce / Freelance',
+    description: 'Premium Fiverr/Upwork gig banner showcasing e-commerce website design services. Features mockup visuals, feature highlights, and trust badges.',
+    impactMetric: 'Optimized gig banner for maximum conversion',
+    technologies: ['Adobe Photoshop', 'Adobe Illustrator'],
+    imageUrl: gdEcom1,
+  },
+  {
+    id: 'gd-4',
+    title: 'E-Commerce Stores Showcase — Portfolio Grid',
+    category: 'Graphic Design',
+    clientIndustry: 'E-Commerce',
+    description: 'Multi-niche e-commerce portfolio showcase banner featuring Fashion, Electronics, Beauty, Furniture, Sports, and Kids store designs.',
+    impactMetric: '6-store portfolio displayed in a single premium layout',
+    technologies: ['Adobe Photoshop', 'Figma'],
+    imageUrl: gdEcom2,
+  },
+  {
+    id: 'gd-5',
+    title: 'Study in Turkey — Premium Flyer V2',
+    category: 'Graphic Design',
+    clientIndustry: 'Education / Consultancy',
+    description: 'Refined version of the study abroad promotional flyer with updated imagery, cleaner layout, and stronger visual hierarchy for digital distribution.',
+    impactMetric: 'Premium redesign with enhanced visual appeal',
+    technologies: ['Adobe Photoshop', 'Adobe Illustrator'],
+    imageUrl: gdFlyer2,
+  },
+];
+
 // Combined for backwards-compat (used in HomePage preview)
 export const PORTFOLIO_PROJECTS: PortfolioProject[] = [...AI_PROJECTS, ...WEB_PROJECTS];
+
