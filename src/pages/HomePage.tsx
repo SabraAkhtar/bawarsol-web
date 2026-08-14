@@ -149,163 +149,242 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       </section>
 
       {/* CORE EXPERTISE / SERVICES SHOWCASE */}
-      <section className="py-20 bg-[#050505] bg-grid-pattern">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-xs font-bold text-[#00F0FF] uppercase tracking-widest">
+      <section className="py-28 bg-[#050505] relative overflow-hidden">
+        {/* Subtle grid texture */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+          {/* Section Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="max-w-2xl mb-20"
+          >
+            <p className="text-[11px] font-bold text-slate-500 uppercase tracking-[0.25em] flex items-center gap-4 mb-5">
+              <span className="w-8 h-[1px] bg-gradient-to-r from-[#00F0FF]/50 to-transparent" />
               Core Engineering Capabilities
+            </p>
+            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-[-0.03em] text-white leading-[1.1] mb-5">
+              Built for Enterprise Scale.
             </h2>
-            <h3 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-              Pioneering AI Systems Built for <span className="font-serif italic font-normal text-[#00F0FF]">Enterprise Scale</span>
-            </h3>
-            <p className="text-slate-400 text-base max-w-2xl mx-auto">
+            <p className="text-slate-400 text-base leading-relaxed">
               From autonomous decision engines to quantized vision models, BawarSol designs custom architectures tailored for high throughput and precision.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {SERVICES_DATA.slice(0, 8).map((service) => (
-              <div
+          {/* Service Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {SERVICES_DATA.slice(0, 8).map((service, i) => (
+              <motion.div
                 key={service.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: i * 0.07 }}
                 onClick={() => handleNav('/services')}
-                className="group p-6 rounded-2xl bg-white/[0.03] backdrop-blur-md border border-white/10 hover:border-[#00F0FF]/50 hover:bg-[#00F0FF]/5 transition-all duration-300 cursor-pointer flex flex-col justify-between shadow-lg hover:shadow-[#00F0FF]/10 hover:-translate-y-1"
+                className="group relative p-6 rounded-2xl bg-white/[0.02] backdrop-blur-xl border border-white/[0.07] hover:border-white/20 transition-all duration-500 cursor-pointer flex flex-col justify-between overflow-hidden"
               >
-                <div>
-                  <div className="w-12 h-12 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:border-[#00F0FF]/40 transition-all">
-                    {serviceIconMap[service.iconName] || <Bot className="w-6 h-6 text-[#00F0FF]" />}
+                {/* Hover glow effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#00F0FF]/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+
+                <div className="relative z-10">
+                  <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center mb-5 group-hover:border-[#00F0FF]/30 transition-all duration-300">
+                    {serviceIconMap[service.iconName] || <Bot className="w-5 h-5 text-[#00F0FF]" />}
                   </div>
-                  <h4 className="text-xl font-bold text-white mb-2 group-hover:text-[#00F0FF] transition-colors">
+                  <h4 className="text-base font-bold text-white mb-2.5 group-hover:text-white/90 transition-colors leading-snug">
                     {service.title}
                   </h4>
-                  <p className="text-slate-400 text-sm leading-relaxed mb-4 line-clamp-3">
+                  <p className="text-slate-500 text-xs leading-relaxed line-clamp-3">
                     {service.shortDesc}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-semibold text-[#00F0FF]">
-                  <span>Learn More</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <div className="relative z-10 pt-5 mt-5 border-t border-white/[0.05] flex items-center justify-between">
+                  <span className="text-[11px] font-semibold text-slate-400 tracking-wide uppercase">Learn More</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-white group-hover:translate-x-1 transition-all duration-300" />
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 
-          <div className="mt-12 text-center">
+          {/* CTA */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="mt-14 flex justify-start"
+          >
             <button
               onClick={() => handleNav('/services')}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-[#00F0FF] bg-[#00F0FF]/10 border border-[#00F0FF]/30 hover:bg-[#00F0FF]/20 transition-all"
+              className="group inline-flex items-center gap-3 text-sm font-medium text-slate-400 hover:text-white transition-colors"
             >
-              <span>View All Detailed Services</span>
-              <ArrowRight className="w-4 h-4" />
+              <span>View all capabilities</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* INDUSTRY SOLUTIONS PREVIEW */}
-      <section className="py-20 bg-[#050505] border-y border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+      <section className="py-28 bg-[#050505] border-y border-white/[0.05] relative overflow-hidden">
+        {/* Ambient glow */}
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#0066FF]/[0.03] rounded-full blur-[100px] pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+          {/* Section Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6"
+          >
             <div>
-              <span className="text-xs font-bold text-[#00F0FF] uppercase tracking-widest block mb-2">
+              <p className="text-[11px] font-bold text-slate-500 uppercase tracking-[0.25em] flex items-center gap-4 mb-5">
+                <span className="w-8 h-[1px] bg-gradient-to-r from-[#00F0FF]/50 to-transparent" />
                 Industry Impact
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-                AI Built for Specialized Sectors
+              </p>
+              <h2 className="text-4xl sm:text-5xl font-extrabold tracking-[-0.03em] text-white leading-[1.1]">
+                AI for Specialized Sectors.
               </h2>
             </div>
             <button
               onClick={() => handleNav('/industries')}
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[#00F0FF] hover:underline"
+              className="group inline-flex items-center gap-3 text-sm font-medium text-slate-400 hover:text-white transition-colors shrink-0"
             >
-              <span>Explore All 8 Industry Modules</span>
-              <ArrowRight className="w-4 h-4" />
+              <span>View all 8 industries</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {INDUSTRIES_DATA.slice(0, 4).map((ind) => (
-              <div
+          {/* Industry Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {INDUSTRIES_DATA.slice(0, 4).map((ind, i) => (
+              <motion.div
                 key={ind.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: i * 0.1 }}
                 onClick={() => handleNav('/industries')}
-                className="p-6 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-[#00F0FF]/50 hover:bg-[#00F0FF]/5 transition-all cursor-pointer group"
+                className="group relative p-6 rounded-2xl bg-white/[0.02] backdrop-blur-xl border border-white/[0.07] hover:border-white/20 transition-all duration-500 cursor-pointer overflow-hidden"
               >
-                <div className="text-xs font-semibold text-[#00F0FF] mb-2 uppercase tracking-wider">
-                  {ind.name}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#0066FF]/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+
+                <div className="relative z-10">
+                  <p className="text-[10px] font-bold text-[#00F0FF]/70 uppercase tracking-[0.2em] mb-3">
+                    {ind.name}
+                  </p>
+                  <h3 className="text-base font-bold text-white mb-3 leading-snug group-hover:text-white/90 transition-colors">
+                    {ind.tagline}
+                  </h3>
+                  <p className="text-slate-500 text-xs leading-relaxed mb-5 line-clamp-3">
+                    {ind.description}
+                  </p>
+                  <div className="text-[10px] text-[#00F0FF]/60 bg-white/[0.03] px-3 py-2 rounded-lg border border-white/[0.05] font-mono tracking-wide">
+                    {ind.metrics}
+                  </div>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-3 group-hover:text-[#00F0FF] transition-colors">
-                  {ind.tagline}
-                </h3>
-                <p className="text-slate-400 text-xs leading-relaxed mb-4 line-clamp-3">
-                  {ind.description}
-                </p>
-                <div className="text-[11px] text-slate-300 bg-black/50 p-2.5 rounded-lg border border-white/10 font-mono text-[#00F0FF]">
-                  {ind.metrics}
-                </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* FEATURED PROJECTS GATEWAY */}
-      <section className="py-20 bg-[#050505]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16">
-            <span className="text-xs font-bold text-[#00F0FF] uppercase tracking-widest block">
+      <section className="py-28 bg-[#050505] relative overflow-hidden">
+        <div className="absolute top-0 left-1/2 w-[600px] h-[600px] bg-[#00F0FF]/[0.02] rounded-full blur-[120px] pointer-events-none -translate-x-1/2" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+          {/* Section Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="max-w-2xl mb-20"
+          >
+            <p className="text-[11px] font-bold text-slate-500 uppercase tracking-[0.25em] flex items-center gap-4 mb-5">
+              <span className="w-8 h-[1px] bg-gradient-to-r from-[#00F0FF]/50 to-transparent" />
               Case Studies & Systems
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-              Featured Engineering Work
+            </p>
+            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-[-0.03em] text-white leading-[1.1] mb-5">
+              Featured Engineering Work.
             </h2>
-            <p className="text-slate-400 text-base max-w-2xl mx-auto">
+            <p className="text-slate-400 text-base leading-relaxed">
               Real-world systems deployed by BawarSol across healthcare, financial audit, edge vision, and freight automation.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {PORTFOLIO_PROJECTS.slice(0, 3).map((proj) => (
-              <div
+          {/* Project Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {PORTFOLIO_PROJECTS.slice(0, 3).map((proj, i) => (
+              <motion.div
                 key={proj.id}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: i * 0.12 }}
                 onClick={() => handleNav('/portfolio')}
-                className="rounded-2xl bg-white/[0.03] border border-white/10 overflow-hidden group cursor-pointer hover:border-[#00F0FF]/50 transition-all shadow-xl"
+                className="group relative rounded-2xl bg-white/[0.02] border border-white/[0.07] overflow-hidden cursor-pointer hover:border-white/20 transition-all duration-500"
               >
-                <div className="h-48 overflow-hidden relative">
+                {/* Image */}
+                <div className="h-52 overflow-hidden relative">
                   <img
                     src={proj.imageUrl}
                     alt={proj.title}
                     referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent" />
-                  <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-[#00F0FF] text-black backdrop-blur">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/50 to-transparent" />
+                  {/* Category pill */}
+                  <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-[10px] font-bold bg-black/60 text-white border border-white/10 backdrop-blur-sm tracking-wide uppercase">
                     {proj.category}
                   </span>
                 </div>
+
+                {/* Content */}
                 <div className="p-6 space-y-3">
-                  <h3 className="text-lg font-bold text-white group-hover:text-[#00F0FF] transition-colors">
+                  <h3 className="text-base font-bold text-white leading-snug group-hover:text-white/90 transition-colors">
                     {proj.title}
                   </h3>
-                  <p className="text-slate-400 text-xs leading-relaxed line-clamp-2">
+                  <p className="text-slate-500 text-xs leading-relaxed line-clamp-2">
                     {proj.description}
                   </p>
-                  <div className="text-xs text-[#00F0FF] font-medium">
-                    ⚡ {proj.impactMetric}
+                  <div className="flex items-center gap-2 pt-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#00F0FF]/50" />
+                    <span className="text-[11px] text-[#00F0FF]/70 font-medium tracking-wide">{proj.impactMetric}</span>
                   </div>
                 </div>
-              </div>
+
+                {/* Hover bottom border accent */}
+                <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#00F0FF]/0 via-[#00F0FF]/40 to-[#00F0FF]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </motion.div>
             ))}
           </div>
 
-          <div className="mt-12 text-center">
+          {/* CTA */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="mt-14 flex justify-start"
+          >
             <button
               onClick={() => handleNav('/portfolio')}
-              className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full font-bold text-sm text-black bg-[#00F0FF] hover:bg-[#33F3FF] transition-all shadow-lg shadow-[#00F0FF]/20"
+              className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-black font-bold text-sm rounded-full overflow-hidden transition-transform hover:scale-[1.02] active:scale-[0.98]"
             >
-              <span>Explore Portfolio Gateway</span>
-              <ArrowRight className="w-4 h-4" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#00F0FF]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <span className="relative z-10 flex items-center gap-2">
+                View Full Portfolio
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </span>
             </button>
-          </div>
+          </motion.div>
         </div>
       </section>
 
