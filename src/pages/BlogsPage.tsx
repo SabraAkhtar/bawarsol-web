@@ -174,7 +174,6 @@ export const BlogsPage: React.FC<BlogsPageProps> = ({ onNavigate, onSelectBlog }
                         alt={blog.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         onError={(e) => { (e.target as HTMLImageElement).src = `https://picsum.photos/seed/${blog.id}/800/400`; }}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-black/80 text-[#00F0FF] border border-white/10 backdrop-blur">
                         {blog.category}

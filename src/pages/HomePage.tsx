@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { ArrowRight, Sparkles, Bot, Database, Eye, BrainCircuit, Code2, Shield, CheckCircle2, TrendingUp, Cpu, Workflow, MessageSquareText } from 'lucide-react';
 import { SERVICES_DATA } from '../data/servicesData';
 import { INDUSTRIES_DATA } from '../data/industriesData';
@@ -30,75 +31,119 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
   return (
     <div className="min-h-screen bg-[#050505] text-[#F0F0F0] pt-20">
       {/* HERO SECTION */}
-      <section className="relative pt-12 pb-24 overflow-hidden border-b border-white/10 hero-radial-bg">
-        {/* Glow ambient backdrops */}
-        <div className="absolute top-1/4 left-10 w-96 h-96 bg-[#00F0FF]/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute top-1/3 right-10 w-96 h-96 bg-[#0066FF]/10 rounded-full blur-3xl pointer-events-none" />
+      <section className="relative pt-16 pb-28 overflow-hidden border-b border-white/[0.05] bg-[#050505]">
+        {/* Subtle, refined ambient backdrops */}
+        <div className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-gradient-to-br from-[#00F0FF]/[0.03] to-transparent rounded-full blur-[120px] pointer-events-none transform -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-tl from-[#0066FF]/[0.04] to-transparent rounded-full blur-[100px] pointer-events-none transform translate-x-1/3 translate-y-1/3" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             {/* Left Column Content */}
-            <div className="lg:col-span-7 space-y-6 text-left">
-              {/* Small Eyebrow Label */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00F0FF]/10 border border-[#00F0FF]/30 text-[#00F0FF] text-xs font-semibold uppercase tracking-wider">
-                <span className="w-2 h-2 rounded-full bg-[#00F0FF] animate-ping" />
-                <span>AI • AUTOMATION • SOFTWARE ENGINEERING</span>
-              </div>
+            <motion.div 
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: { opacity: 0 },
+                visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+              }}
+              className="lg:col-span-7 space-y-8 text-left"
+            >
+              {/* Refined Eyebrow Label */}
+              <motion.div 
+                variants={{
+                  hidden: { opacity: 0, y: 15 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } }
+                }}
+                className="text-[11px] font-bold text-slate-400 uppercase tracking-[0.25em] flex items-center gap-4"
+              >
+                <span className="w-8 h-[1px] bg-gradient-to-r from-[#00F0FF]/50 to-transparent" />
+                Enterprise AI Systems
+              </motion.div>
 
-              {/* Main Heading */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
+              {/* Huge, Tight Headline */}
+              <motion.h1 
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
+                }}
+                className="text-5xl sm:text-6xl lg:text-[76px] font-extrabold tracking-[-0.03em] text-white leading-[1.05]"
+              >
                 Engineering <br />
-                <span className="font-serif italic font-normal text-[#00F0FF] accent-glow">
-                  Intelligent Solutions
+                <span className="bg-clip-text text-transparent bg-gradient-to-br from-white via-white to-slate-500">
+                  Intelligent Solutions.
                 </span>
-              </h1>
+              </motion.h1>
 
-              {/* Supporting Paragraph */}
-              <p className="text-slate-300 text-lg sm:text-xl font-normal leading-relaxed max-w-2xl">
-                We build AI-powered products, intelligent automation, and scalable software that transform ambitious ideas into real-world solutions.
-              </p>
+              {/* Elegant Paragraph */}
+              <motion.p 
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
+                }}
+                className="text-slate-400 text-lg sm:text-xl font-normal leading-[1.6] max-w-2xl"
+              >
+                We architect AI-powered products, intelligent automation, and scalable software that transform ambitious concepts into robust, real-world systems.
+              </motion.p>
 
-              {/* CTA Buttons */}
-              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+              {/* Premium CTA Buttons */}
+              <motion.div 
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
+                }}
+                className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-5"
+              >
                 <button
                   onClick={() => handleNav('/book-a-call')}
-                  className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-bold text-base text-black bg-[#00F0FF] hover:bg-[#33F3FF] transition-all duration-300 shadow-xl shadow-[#00F0FF]/25 hover:shadow-[#00F0FF]/40 hover:-translate-y-0.5"
+                  className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-black font-bold text-sm rounded-full overflow-hidden transition-transform hover:scale-[1.02] active:scale-[0.98]"
                 >
-                  <Sparkles className="w-5 h-5 text-black animate-pulse" />
-                  <span>Book a Call</span>
-                  <ArrowRight className="w-5 h-5" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#00F0FF]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <span className="relative z-10 flex items-center gap-2">
+                    Book a Consultation
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </span>
                 </button>
 
                 <button
                   onClick={() => handleNav('/services')}
-                  className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full font-semibold text-sm text-slate-200 bg-white/[0.04] border border-white/10 hover:border-[#00F0FF]/40 hover:text-[#00F0FF] transition-all shadow-md"
+                  className="group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-medium text-sm text-slate-300 bg-white/[0.02] border border-white/10 hover:bg-white/[0.04] hover:text-white transition-all"
                 >
-                  <span>Explore Services</span>
-                  <ArrowRight className="w-4 h-4 text-slate-400" />
+                  Explore Capabilities
                 </button>
-              </div>
+              </motion.div>
 
-              {/* Social Proof Badges */}
-              <div className="pt-6 border-t border-white/10 grid grid-cols-3 gap-4 text-xs text-slate-400">
+              {/* Refined Social Proof */}
+              <motion.div 
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: { opacity: 1, transition: { duration: 1, delay: 0.6 } }
+                }}
+                className="pt-8 border-t border-white/[0.05] flex flex-wrap gap-x-8 gap-y-3 text-[11px] font-medium text-slate-500 tracking-wide uppercase"
+              >
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#00F0FF] shrink-0" />
-                  <span>Production Agent Systems</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#00F0FF]/40" />
+                  Production Agent Systems
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#00F0FF] shrink-0" />
-                  <span>Zero-Hallucination RAG</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#00F0FF]/40" />
+                  Zero-Hallucination RAG
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#00F0FF] shrink-0" />
-                  <span>Enterprise Security</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#00F0FF]/40" />
+                  Enterprise Security
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
             {/* Right Column Visual */}
-            <div className="lg:col-span-5 relative">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95, filter: 'blur(10px)' }}
+              animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+              transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+              className="lg:col-span-5 relative"
+            >
               <AINodeVisual />
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
