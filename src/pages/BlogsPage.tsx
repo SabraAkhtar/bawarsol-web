@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BlogPost } from '../types';
 import { Search, Calendar, Clock, User, ArrowRight, Sparkles, Filter } from 'lucide-react';
 import { GlobalCTA } from '../components/GlobalCTA';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface BlogsPageProps {
   onNavigate: (path: string) => void;
@@ -49,157 +50,206 @@ export const BlogsPage: React.FC<BlogsPageProps> = ({ onNavigate, onSelectBlog }
 
   const featuredBlog = blogs.find((b) => b.featured) || blogs[0];
 
-  return (
-    <div className="min-h-screen bg-[#050505] text-[#F0F0F0] pt-24 pb-12">
-      {/* Hero Header */}
-      <section className="relative py-16 bg-[#050505] border-b border-white/10 hero-radial-bg text-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00F0FF]/10 border border-[#00F0FF]/30 text-[#00F0FF] text-xs font-semibold uppercase tracking-wider">
-            <span>Engineering Publications & Insights</span>
-          </div>
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
+  };
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight">
+  const itemVariants = {
+    hidden: { opacity: 0, y: 24 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }
+  };
+
+  return (
+    <div className="min-h-screen bg-[#050505] text-[#F0F0F0] pt-24 pb-12 overflow-hidden">
+      {/* Hero Header */}
+      <section className="relative py-20 bg-[#050505] border-b border-white/10 hero-radial-bg text-center">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-100px' }}
+          variants={containerVariants}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 relative z-10"
+        >
+          <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#00F0FF]/10 border border-[#00F0FF]/30 text-[#00F0FF] text-xs font-bold uppercase tracking-wider shadow-[0_0_20px_rgba(0,240,255,0.1)]">
+            <Sparkles className="w-4 h-4 text-[#00F0FF]" />
+            <span>Engineering Publications &amp; Insights</span>
+          </motion.div>
+
+          <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white tracking-tight">
             AI Engineering <br />
             <span className="font-serif italic font-normal text-[#00F0FF] accent-glow">
-              Technical Insights & Research
+              Technical Insights &amp; Research
             </span>
-          </h1>
+          </motion.h1>
 
-          <p className="text-slate-300 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
+          <motion.p variants={itemVariants} className="text-slate-300 text-base sm:text-xl max-w-3xl mx-auto leading-relaxed">
             In-depth engineering breakdowns on agentic workflows, enterprise RAG optimization, vision model quantization, and scalable AI infrastructure.
-          </p>
+          </motion.p>
 
           {/* Search & Category Bar */}
-          <div className="pt-6 max-w-2xl mx-auto space-y-4">
+          <motion.div variants={itemVariants} className="pt-4 max-w-2xl mx-auto space-y-5">
             <div className="relative">
-              <Search className="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
+              <Search className="w-5 h-5 absolute left-5 top-1/2 -translate-y-1/2 text-slate-400" />
               <input
                 type="text"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                placeholder="Search research papers, articles, categories..."
-                className="w-full pl-11 pr-4 py-3 rounded-full bg-white/[0.04] border border-white/10 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#00F0FF] focus:ring-1 focus:ring-[#00F0FF] shadow-inner"
+                placeholder="Search articles, categories, topics..."
+                className="w-full pl-14 pr-6 py-4 rounded-full bg-white/[0.04] border border-white/10 text-base text-white placeholder-slate-500 focus:outline-none focus:border-[#00F0FF]/50 focus:ring-1 focus:ring-[#00F0FF]/30 shadow-inner transition-all backdrop-blur-xl"
               />
             </div>
 
             {/* Category Pills */}
-            <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
+            <div className="flex flex-wrap items-center justify-center gap-2 pt-1">
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all ${
+                  className={`px-5 py-2 rounded-full text-sm font-bold transition-all ${
                     selectedCategory === cat
-                      ? 'bg-[#00F0FF] text-black font-bold shadow-md shadow-[#00F0FF]/20'
-                      : 'bg-white/[0.04] text-slate-400 hover:text-white hover:bg-white/[0.08] border border-white/10'
+                      ? 'bg-[#00F0FF] text-black shadow-[0_0_15px_rgba(0,240,255,0.3)] scale-105'
+                      : 'bg-white/[0.04] text-slate-400 hover:text-white hover:bg-white/[0.08] border border-white/10 hover:border-white/20'
                   }`}
                 >
                   {cat}
                 </button>
               ))}
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* Main Content Area */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <section className="py-20 relative">
+        <div className="absolute top-1/3 left-0 w-1/2 h-1/2 bg-[#00F0FF]/5 rounded-full blur-[150px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 relative z-10">
           {/* Featured Article Hero Card */}
-          {featuredBlog && selectedCategory === 'All' && !searchTerm && (
-            <div
-              onClick={() => onSelectBlog(featuredBlog.slug)}
-              className="p-8 md:p-10 rounded-3xl bg-white/[0.03] backdrop-blur-xl border border-white/10 hover:border-[#00F0FF]/50 transition-all shadow-2xl cursor-pointer group grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
-            >
-              <div className="lg:col-span-6 space-y-4">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-[#00F0FF]/10 text-[#00F0FF] border border-[#00F0FF]/30">
-                  <Sparkles className="w-3.5 h-3.5 text-[#00F0FF]" />
-                  <span>Featured Publication</span>
+          <AnimatePresence>
+            {featuredBlog && selectedCategory === 'All' && !searchTerm && (
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                onClick={() => onSelectBlog(featuredBlog.slug)}
+                className="p-8 md:p-12 rounded-[2rem] bg-white/[0.02] backdrop-blur-2xl border border-white/10 hover:border-[#00F0FF]/50 transition-all shadow-2xl cursor-pointer group grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center overflow-hidden relative"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-[#00F0FF]/[0.02] to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity" />
+
+                <div className="lg:col-span-6 space-y-6 relative z-10">
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold bg-[#00F0FF]/10 text-[#00F0FF] border border-[#00F0FF]/30">
+                    <Sparkles className="w-3.5 h-3.5 text-[#00F0FF]" />
+                    <span>Featured Publication</span>
+                  </div>
+
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white group-hover:text-[#00F0FF] transition-colors leading-tight">
+                    {featuredBlog.title}
+                  </h2>
+
+                  <p className="text-slate-300 text-base leading-relaxed line-clamp-3">
+                    {featuredBlog.excerpt}
+                  </p>
+
+                  <div className="flex flex-wrap items-center gap-5 text-sm text-slate-400 pt-4 border-t border-white/10">
+                    <span className="flex items-center gap-2 font-bold text-slate-200">
+                      <User className="w-4 h-4 text-[#00F0FF]" />
+                      {featuredBlog.author}
+                    </span>
+                    <span className="flex items-center gap-2">
+                      <Calendar className="w-4 h-4 text-slate-500" />
+                      {featuredBlog.date}
+                    </span>
+                    <span className="flex items-center gap-2">
+                      <Clock className="w-4 h-4 text-slate-500" />
+                      {featuredBlog.readTime}
+                    </span>
+                  </div>
+
+                  <div className="inline-flex items-center gap-2 text-sm font-bold text-[#00F0FF] group-hover:gap-3 transition-all">
+                    <span>Read Full Article</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </div>
                 </div>
 
-                <h2 className="text-2xl sm:text-3xl font-extrabold text-white group-hover:text-[#00F0FF] transition-colors leading-tight">
-                  {featuredBlog.title}
-                </h2>
-
-                <p className="text-slate-300 text-sm leading-relaxed line-clamp-3">
-                  {featuredBlog.excerpt}
-                </p>
-
-                <div className="flex flex-wrap items-center gap-4 text-xs text-slate-400 pt-2 border-t border-white/10">
-                  <span className="flex items-center gap-1.5 font-medium text-slate-200">
-                    <User className="w-3.5 h-3.5 text-[#00F0FF]" />
-                    {featuredBlog.author}
-                  </span>
-                  <span>•</span>
-                  <span className="flex items-center gap-1.5">
-                    <Calendar className="w-3.5 h-3.5 text-slate-400" />
-                    {featuredBlog.date}
-                  </span>
-                  <span>•</span>
-                  <span className="flex items-center gap-1.5">
-                    <Clock className="w-3.5 h-3.5 text-slate-400" />
-                    {featuredBlog.readTime}
-                  </span>
+                <div className="lg:col-span-6 h-72 lg:h-80 rounded-[1.5rem] overflow-hidden relative border border-white/10 shadow-xl">
+                  <img
+                    src={featuredBlog.coverImage}
+                    alt={featuredBlog.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    onError={(e) => { (e.target as HTMLImageElement).src = 'https://picsum.photos/seed/blog-featured/1200/600'; }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                 </div>
-              </div>
-
-              <div className="lg:col-span-6 h-72 rounded-2xl overflow-hidden relative border border-white/10">
-                <img
-                  src={featuredBlog.coverImage}
-                  alt={featuredBlog.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  onError={(e) => { (e.target as HTMLImageElement).src = 'https://picsum.photos/seed/blog-featured/1200/600'; }}
-                />
-              </div>
-            </div>
-          )}
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           {/* Blog Grid */}
           {loading ? (
-            <div className="text-center py-12 text-slate-400">Loading BawarSol research publications...</div>
+            <div className="text-center py-20 text-[#00F0FF] font-bold animate-pulse text-lg">
+              Loading BawarSol research publications...
+            </div>
           ) : filteredBlogs.length === 0 ? (
-            <div className="text-center py-12 text-slate-400">No articles found matching your criteria.</div>
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center py-20 p-8 rounded-[2rem] bg-white/[0.02] border border-white/10 backdrop-blur-sm">
+              <p className="text-slate-400 text-lg">No articles found matching your criteria.</p>
+            </motion.div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <motion.div
+              layout
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-100px' }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
               {filteredBlogs.map((blog) => (
-                <div
+                <motion.div
+                  layout
+                  variants={itemVariants}
+                  whileHover={{ y: -6 }}
                   key={blog.id}
                   onClick={() => onSelectBlog(blog.slug)}
-                  className="rounded-3xl bg-white/[0.03] backdrop-blur-xl border border-white/10 overflow-hidden flex flex-col justify-between group hover:border-[#00F0FF]/50 transition-all cursor-pointer shadow-xl"
+                  className="rounded-[2rem] bg-white/[0.02] backdrop-blur-2xl border border-white/5 overflow-hidden flex flex-col justify-between group hover:border-[#00F0FF]/40 hover:bg-white/[0.04] transition-all cursor-pointer shadow-xl"
                 >
                   <div>
-                    <div className="h-48 overflow-hidden relative">
+                    <div className="h-52 overflow-hidden relative">
                       <img
                         src={blog.coverImage}
                         alt={blog.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                         onError={(e) => { (e.target as HTMLImageElement).src = `https://picsum.photos/seed/${blog.id}/800/400`; }}
                       />
-                      <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-black/80 text-[#00F0FF] border border-white/10 backdrop-blur">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                      <span className="absolute top-4 left-4 px-3 py-1.5 rounded-full text-xs font-bold bg-black/70 text-[#00F0FF] border border-[#00F0FF]/30 backdrop-blur-sm">
                         {blog.category}
                       </span>
                     </div>
 
-                    <div className="p-6 space-y-3">
-                      <h3 className="text-lg font-bold text-white group-hover:text-[#00F0FF] transition-colors line-clamp-2">
+                    <div className="p-7 space-y-4">
+                      <h3 className="text-lg font-extrabold text-white group-hover:text-[#00F0FF] transition-colors line-clamp-2 leading-tight">
                         {blog.title}
                       </h3>
-                      <p className="text-slate-400 text-xs leading-relaxed line-clamp-3">
+                      <p className="text-slate-400 text-sm leading-relaxed line-clamp-3">
                         {blog.excerpt}
                       </p>
                     </div>
                   </div>
 
-                  <div className="p-6 pt-0 border-t border-white/10 mt-4 flex items-center justify-between text-xs text-slate-400">
-                    <span className="font-medium text-slate-300">{blog.author}</span>
-                    <span className="flex items-center gap-1 font-semibold text-[#00F0FF]">
+                  <div className="px-7 pb-7 border-t border-white/5 pt-4 flex items-center justify-between text-sm">
+                    <span className="font-bold text-slate-300 text-xs flex items-center gap-2">
+                      <User className="w-3.5 h-3.5 text-[#00F0FF]" />
+                      {blog.author}
+                    </span>
+                    <span className="flex items-center gap-1.5 font-bold text-[#00F0FF] group-hover:gap-2.5 transition-all text-xs">
                       <span>Read Article</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </span>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           )}
         </div>
       </section>

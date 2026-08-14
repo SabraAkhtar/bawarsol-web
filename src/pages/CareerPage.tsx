@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { JobPosition } from '../types';
 import { Briefcase, MapPin, Clock, ArrowRight, Sparkles, CheckCircle2, UserCheck, Code } from 'lucide-react';
 import { GlobalCTA } from '../components/GlobalCTA';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface CareerPageProps {
   onNavigate: (path: string) => void;
@@ -32,125 +33,172 @@ export const CareerPage: React.FC<CareerPageProps> = ({ onNavigate, onApplyJob }
     (j) => selectedDept === 'All' || j.department === selectedDept
   );
 
-  return (
-    <div className="min-h-screen bg-[#050505] text-[#F0F0F0] pt-24 pb-12">
-      {/* Hero Header */}
-      <section className="relative py-16 bg-[#050505] border-b border-white/10 hero-radial-bg text-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00F0FF]/10 border border-[#00F0FF]/30 text-[#00F0FF] text-xs font-semibold uppercase tracking-wider">
-            <span>Engineering Talent & Careers</span>
-          </div>
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 }
+    }
+  };
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight">
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] }
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-[#050505] text-[#F0F0F0] pt-24 pb-12 overflow-hidden">
+      {/* Hero Header */}
+      <section className="relative py-20 bg-[#050505] border-b border-white/10 hero-radial-bg text-center">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={containerVariants}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 relative z-10"
+        >
+          <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#00F0FF]/10 border border-[#00F0FF]/30 text-[#00F0FF] text-xs font-bold uppercase tracking-wider shadow-[0_0_20px_rgba(0,240,255,0.1)]">
+            <Sparkles className="w-4 h-4 text-[#00F0FF]" />
+            <span>Engineering Talent & Careers</span>
+          </motion.div>
+
+          <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white tracking-tight">
             Build the Future <br />
             <span className="font-serif italic font-normal text-[#00F0FF] accent-glow">
               With BawarSol
             </span>
-          </h1>
+          </motion.h1>
 
-          <p className="text-slate-300 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
+          <motion.p variants={itemVariants} className="text-slate-300 text-base sm:text-xl max-w-3xl mx-auto leading-relaxed">
             Join an elite engineering team building autonomous agents, multi-modal LLMs, high-speed vision pipelines, and scalable AI infrastructure for global clients.
-          </p>
+          </motion.p>
 
           {/* Department filter pills */}
-          <div className="flex flex-wrap items-center justify-center gap-2 pt-6">
+          <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center gap-3 pt-8">
             {departments.map((dept) => (
               <button
                 key={dept}
                 onClick={() => setSelectedDept(dept)}
-                className={`px-4 py-2 rounded-full text-xs font-medium transition-all ${
+                className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all ${
                   selectedDept === dept
-                    ? 'bg-[#00F0FF] text-black font-bold shadow-md shadow-[#00F0FF]/20'
-                    : 'bg-white/[0.04] text-slate-400 hover:text-white border border-white/10'
+                    ? 'bg-[#00F0FF] text-black shadow-[0_0_20px_rgba(0,240,255,0.3)] scale-105'
+                    : 'bg-white/[0.04] text-slate-400 hover:text-white border border-white/10 hover:border-white/30'
                 }`}
               >
                 {dept}
               </button>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* Open Positions Grid */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          <div className="flex items-center justify-between">
-            <h2 className="text-2xl font-bold text-white">Open Engineering Roles</h2>
-            <span className="text-xs text-slate-400 font-mono">
+      <section className="py-20 relative">
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[#00F0FF]/5 rounded-full blur-[150px] pointer-events-none" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-white/10 pb-6"
+          >
+            <h2 className="text-3xl font-extrabold text-white">Open Engineering Roles</h2>
+            <span className="px-4 py-2 rounded-full bg-[#00F0FF]/10 border border-[#00F0FF]/20 text-sm text-[#00F0FF] font-bold shadow-sm">
               {filteredJobs.length} active positions in database
             </span>
-          </div>
+          </motion.div>
 
           {loading ? (
-            <div className="text-center py-12 text-slate-400">Loading open positions from BawarSol database...</div>
-          ) : filteredJobs.length === 0 ? (
-            <div className="text-center py-12 text-slate-400">No active positions found in this department.</div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {filteredJobs.map((job) => (
-                <div
-                  key={job.id}
-                  className="p-8 rounded-3xl bg-white/[0.03] backdrop-blur-xl border border-white/10 hover:border-[#00F0FF]/40 transition-all shadow-xl flex flex-col justify-between group"
-                >
-                  <div className="space-y-4">
-                    <div className="flex items-start justify-between gap-4">
-                      <div>
-                        <span className="text-xs font-semibold text-[#00F0FF] uppercase tracking-wider block">
-                          {job.department}
-                        </span>
-                        <h3 className="text-xl font-bold text-white group-hover:text-[#00F0FF] transition-colors mt-1">
-                          {job.title}
-                        </h3>
-                      </div>
-                      <span className="px-3 py-1 rounded-full text-[11px] font-semibold bg-black/80 text-slate-300 border border-white/10 shrink-0">
-                        {job.employmentType}
-                      </span>
-                    </div>
-
-                    <div className="flex flex-wrap items-center gap-4 text-xs text-slate-400 font-mono">
-                      <span className="flex items-center gap-1">
-                        <MapPin className="w-3.5 h-3.5 text-[#00F0FF]" />
-                        {job.location}
-                      </span>
-                      <span>•</span>
-                      <span className="flex items-center gap-1">
-                        <Briefcase className="w-3.5 h-3.5 text-[#00F0FF]" />
-                        {job.experience}
-                      </span>
-                    </div>
-
-                    <p className="text-slate-300 text-sm leading-relaxed">
-                      {job.description}
-                    </p>
-
-                    <div className="space-y-2 pt-2">
-                      <span className="text-xs font-bold text-slate-400 block">Required Skills:</span>
-                      <div className="flex flex-wrap gap-1.5">
-                        {job.skills.map((skill) => (
-                          <span
-                            key={skill}
-                            className="text-xs bg-black/60 text-[#00F0FF] px-2.5 py-1 rounded-md border border-white/10 font-mono"
-                          >
-                            {skill}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="pt-6 mt-6 border-t border-white/10 flex items-center justify-between">
-                    <span className="text-xs text-slate-400">Competitive Salary + Equity</span>
-                    <button
-                      onClick={() => onApplyJob(job.slug)}
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold text-black bg-[#00F0FF] hover:bg-[#33F3FF] transition-all shadow-md shadow-[#00F0FF]/20"
-                    >
-                      <span>Apply Now</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
-                  </div>
-                </div>
-              ))}
+            <div className="text-center py-20 text-[#00F0FF] font-bold animate-pulse text-lg">
+              Loading open positions from BawarSol database...
             </div>
+          ) : filteredJobs.length === 0 ? (
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center py-20 p-8 rounded-[2rem] bg-white/[0.02] border border-white/10 backdrop-blur-sm">
+              <p className="text-slate-400 text-lg">No active positions found in this department.</p>
+            </motion.div>
+          ) : (
+            <motion.div 
+              layout
+              className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            >
+              <AnimatePresence>
+                {filteredJobs.map((job) => (
+                  <motion.div
+                    layout
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    transition={{ duration: 0.3 }}
+                    whileHover={{ y: -5 }}
+                    key={job.id}
+                    className="p-8 sm:p-10 rounded-[2rem] bg-white/[0.02] backdrop-blur-2xl border border-white/5 hover:border-[#00F0FF]/40 hover:bg-white/[0.04] transition-all shadow-xl flex flex-col justify-between group overflow-hidden relative"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#00F0FF]/[0.02] to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity" />
+                    
+                    <div className="space-y-6 relative z-10">
+                      <div className="flex items-start justify-between gap-4 border-b border-white/5 pb-6">
+                        <div>
+                          <span className="text-xs font-bold text-[#00F0FF] uppercase tracking-wider block mb-2">
+                            {job.department}
+                          </span>
+                          <h3 className="text-2xl font-extrabold text-white group-hover:text-[#00F0FF] transition-colors leading-tight">
+                            {job.title}
+                          </h3>
+                        </div>
+                        <span className="px-4 py-1.5 rounded-full text-xs font-bold bg-[#00F0FF]/10 text-[#00F0FF] border border-[#00F0FF]/30 shrink-0 uppercase tracking-wide">
+                          {job.employmentType}
+                        </span>
+                      </div>
+
+                      <div className="flex flex-wrap items-center gap-6 text-sm text-slate-400 font-medium">
+                        <span className="flex items-center gap-2 bg-black/40 px-3 py-1.5 rounded-lg border border-white/5">
+                          <MapPin className="w-4 h-4 text-[#00F0FF]" />
+                          {job.location}
+                        </span>
+                        <span className="flex items-center gap-2 bg-black/40 px-3 py-1.5 rounded-lg border border-white/5">
+                          <Briefcase className="w-4 h-4 text-[#00F0FF]" />
+                          {job.experience}
+                        </span>
+                      </div>
+
+                      <p className="text-slate-300 text-base leading-relaxed">
+                        {job.description}
+                      </p>
+
+                      <div className="space-y-3 pt-4">
+                        <span className="text-xs font-bold text-slate-400 block uppercase tracking-wider">Required Skills:</span>
+                        <div className="flex flex-wrap gap-2">
+                          {job.skills.map((skill) => (
+                            <span
+                              key={skill}
+                              className="text-xs font-bold bg-white/[0.03] text-white px-3 py-1.5 rounded-xl border border-white/10 hover:border-[#00F0FF]/50 hover:text-[#00F0FF] transition-colors cursor-default"
+                            >
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="pt-8 mt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 relative z-10">
+                      <span className="text-sm font-bold text-slate-400">Competitive Salary + Equity</span>
+                      <button
+                        onClick={() => onApplyJob(job.slug)}
+                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-sm font-bold text-black bg-[#00F0FF] hover:bg-[#33F3FF] transition-all shadow-[0_0_20px_rgba(0,240,255,0.2)] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)]"
+                      >
+                        <span>Apply Now</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </motion.div>
           )}
         </div>
       </section>
