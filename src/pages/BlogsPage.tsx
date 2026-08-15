@@ -185,6 +185,39 @@ export const BlogsPage: React.FC<BlogsPageProps> = ({ onNavigate, onSelectBlog }
             )}
           </AnimatePresence>
 
+          {/* Author Bio Card */}
+          {(selectedCategory === 'All' || selectedCategory === 'Web & Graphics') && (
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              className="p-8 md:p-10 rounded-[2rem] bg-gradient-to-br from-white/[0.04] to-transparent backdrop-blur-2xl border border-[#00F0FF]/20 shadow-[0_0_30px_rgba(0,240,255,0.05)] grid grid-cols-1 md:grid-cols-12 gap-8 items-center overflow-hidden relative"
+            >
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#00F0FF]/10 rounded-full blur-[80px] pointer-events-none" />
+              
+              <div className="md:col-span-4 lg:col-span-3 flex justify-center">
+                <div className="w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden border-2 border-[#00F0FF]/40 p-2 shadow-[0_0_20px_rgba(0,240,255,0.2)]">
+                  <img
+                    src="/images/team/sabra_akhtar.jpg"
+                    alt="Sabra Akhtar"
+                    className="w-full h-full object-cover rounded-full"
+                  />
+                </div>
+              </div>
+              
+              <div className="md:col-span-8 lg:col-span-9 space-y-4 relative z-10 text-center md:text-left">
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-white flex items-center justify-center md:justify-start gap-3">
+                  Meet Sabra Akhtar
+                  <Sparkles className="w-5 h-5 text-[#00F0FF]" />
+                </h3>
+                <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                  Hi, I’m <strong className="text-white font-semibold">Sabra Akhtar</strong>, a passionate Web Developer and Graphic Designer who loves turning ideas into creative, modern, and user-friendly digital experiences. I create professional websites and eye-catching designs that help brands build a strong online presence. With a blend of creativity and technology, I’m always focused on learning, creating, and bringing fresh ideas to life.
+                </p>
+              </div>
+            </motion.div>
+          )}
+
           {/* Blog Grid */}
           {loading ? (
             <div className="text-center py-20 text-[#00F0FF] font-bold animate-pulse text-lg">
