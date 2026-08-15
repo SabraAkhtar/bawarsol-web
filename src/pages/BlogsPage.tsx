@@ -185,7 +185,73 @@ export const BlogsPage: React.FC<BlogsPageProps> = ({ onNavigate, onSelectBlog }
             )}
           </AnimatePresence>
 
-          {/* Professional Author Bio Card */}
+          {/* Muhammad Idrees Bio Card */}
+          {(selectedCategory === 'All' || selectedCategory !== 'Web & Graphics') && (
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="relative p-[1px] rounded-[2.5rem] bg-gradient-to-b from-white/10 to-transparent shadow-2xl group mb-12"
+            >
+              <div className="absolute inset-0 bg-[#050505] rounded-[2.5rem] -z-10" />
+              <div className="relative z-10 flex flex-col md:flex-row items-center gap-8 md:gap-12 p-8 md:p-12 rounded-[2.5rem] bg-gradient-to-bl from-[#00F0FF]/[0.03] to-transparent overflow-hidden">
+                
+                {/* Background Glow */}
+                <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#00F0FF]/10 rounded-full blur-[120px] -translate-y-1/2 -translate-x-1/3 pointer-events-none transition-transform duration-1000 group-hover:scale-110" />
+                
+                {/* Text Section (Left Side for Idrees) */}
+                <div className="flex-1 space-y-6 text-center md:text-left relative z-10 order-2 md:order-1">
+                  <div className="space-y-2">
+                    <span className="inline-flex items-center gap-2 text-[10px] sm:text-xs font-bold uppercase tracking-[0.3em] text-[#00F0FF]">
+                      <Sparkles className="w-3.5 h-3.5" />
+                      Visionary Leader
+                    </span>
+                    <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+                      Meet <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-500">Muhammad Idrees</span>
+                    </h3>
+                    <p className="text-[#00F0FF]/80 font-medium tracking-wide">Founder & CEO of BawarSol</p>
+                  </div>
+                  
+                  <div className="w-12 h-[2px] bg-gradient-to-r from-[#00F0FF] to-transparent mx-auto md:mx-0" />
+                  
+                  <div className="text-slate-400 text-sm sm:text-base leading-relaxed max-w-3xl mx-auto md:mx-0 space-y-3">
+                    <p>
+                      <strong className="text-white">Muhammad Idrees</strong> is the Founder & CEO of <strong className="text-white">BawarSol</strong>, a technology company dedicated to building intelligent solutions that help businesses innovate, automate, and grow. With expertise in <em>Artificial Intelligence, Machine Learning, Computer Vision, Generative AI, AI Agents, RAG systems, and automation</em>, he leads BawarSol’s technical vision and product development.
+                    </p>
+                    <p>
+                      His mission is to bridge the gap between <em>cutting-edge AI and real-world business needs</em>, transforming complex ideas into reliable, scalable, and impactful technology solutions.
+                    </p>
+                    <p className="italic text-slate-300 font-medium">
+                      “Engineering Intelligent Solutions that create real-world impact.”
+                    </p>
+                  </div>
+                  
+                  <div className="pt-4 flex items-center justify-center md:justify-start gap-4">
+                    <button onClick={() => window.location.href='/contact'} className="px-6 py-2.5 rounded-full bg-[#00F0FF]/10 hover:bg-[#00F0FF]/20 border border-[#00F0FF]/30 text-[#00F0FF] text-sm font-bold transition-all flex items-center gap-2 group/btn cursor-pointer shadow-lg">
+                      Let's Discuss AI
+                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </button>
+                  </div>
+                </div>
+
+                {/* Image Section (Right Side for Idrees) */}
+                <div className="relative shrink-0 mx-auto md:mx-0 order-1 md:order-2">
+                  <div className="w-48 h-48 md:w-64 md:h-64 rounded-full p-2 bg-gradient-to-tl from-[#00F0FF]/40 via-white/10 to-transparent">
+                    <img
+                      src="/images/team/muhammad_idrees_ceo.jpg"
+                      alt="Muhammad Idrees"
+                      className="w-full h-full object-cover rounded-full filter grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 object-top"
+                    />
+                  </div>
+                  <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-[#00F0FF]/20 rounded-full blur-2xl" />
+                  <div className="absolute top-1/2 -right-4 w-1 h-12 bg-gradient-to-b from-[#00F0FF] to-transparent rounded-full opacity-50" />
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Professional Author Bio Card (Sabra) */}
           {(selectedCategory === 'All' || selectedCategory === 'Web & Graphics') && (
             <motion.div
               initial={{ opacity: 0, y: 40 }}
