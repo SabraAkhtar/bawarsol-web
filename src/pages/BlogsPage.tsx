@@ -3,6 +3,7 @@ import { BlogPost } from '../types';
 import { Search, Calendar, Clock, User, ArrowRight, Sparkles, Filter } from 'lucide-react';
 import { GlobalCTA } from '../components/GlobalCTA';
 import { motion, AnimatePresence } from 'framer-motion';
+import { STATIC_BLOGS } from '../data/blogsData';
 
 interface BlogsPageProps {
   onNavigate: (path: string) => void;
@@ -21,22 +22,16 @@ export const BlogsPage: React.FC<BlogsPageProps> = ({ onNavigate, onSelectBlog }
     'Generative AI',
     'RAG Systems',
     'Computer Vision',
+    'Web & Graphics',
     'NLP',
     'Automation',
     'Software Engineering',
   ];
 
   useEffect(() => {
-    fetch('/api/blogs')
-      .then((res) => res.json())
-      .then((data) => {
-        setBlogs(data.blogs || []);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error('Failed to load blogs', err);
-        setLoading(false);
-      });
+    // Use static data — no API call needed (works on Vercel)
+    setBlogs(STATIC_BLOGS.filter((b) => b.published));
+    setLoading(false);
   }, []);
 
   const filteredBlogs = blogs.filter((blog) => {

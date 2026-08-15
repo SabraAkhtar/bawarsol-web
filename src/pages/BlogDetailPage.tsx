@@ -3,6 +3,7 @@ import { BlogPost } from '../types';
 import { ArrowLeft, Calendar, Clock, User, Share2, Sparkles, BookOpen, Check, ArrowRight } from 'lucide-react';
 import { GlobalCTA } from '../components/GlobalCTA';
 import { motion } from 'framer-motion';
+import { STATIC_BLOGS } from '../data/blogsData';
 
 interface BlogDetailPageProps {
   slug: string;
@@ -26,19 +27,14 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ slug, onNavigate
 
   useEffect(() => {
     setLoading(true);
-    fetch(`/api/blogs/${slug}`)
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.blog) {
-          setBlog(data.blog);
-          setRelated(data.related || []);
-        }
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error('Failed to fetch blog detail', err);
-        setLoading(false);
-      });
+    // Use static data — no API call needed (works on Vercel)
+    const found = STATIC_BLOGS.find((b) => b.slug === slug && b.published) || null;
+    setBlog(found);
+    if (found) {
+      const rel = STATIC_BLOGS.filter((b) => b.published && b.id !== found.id && b.category === found.category).slice(0, 3);
+      setRelated(rel.length > 0 ? rel : STATIC_BLOGS.filter((b) => b.published && b.id !== found.id).slice(0, 3));
+    }
+    setLoading(false);
   }, [slug]);
 
   const handleCopyLink = () => {
