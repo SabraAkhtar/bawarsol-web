@@ -1,5 +1,5 @@
 import React from 'react';
-import logoImage from '../assets/images/bawarsol_logo_new.png';
+import logoImage from '../assets/images/bawarsol_logo_light.png';
 
 interface LogoProps {
   size?: 'sm' | 'md' | 'lg' | 'xl';
@@ -30,7 +30,7 @@ export const Logo: React.FC<LogoProps> = ({
         className={`${currentSize.img} w-auto object-contain drop-shadow-md`}
       />
       {showTagline && (
-        <span className="font-semibold tracking-wider uppercase text-slate-400 text-[10px] mt-1">
+        <span className="font-semibold tracking-wider uppercase text-slate-500 text-[10px] mt-1">
           Engineering Intelligent Solutions
         </span>
       )}

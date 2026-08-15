@@ -90,7 +90,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] text-slate-100 flex flex-col selection:bg-[#00F0FF]/30 selection:text-white">
+    <div className="min-h-screen bg-slate-50 text-slate-100 flex flex-col selection:bg-blue-600/30 selection:text-slate-900">
       <Navbar currentPath={currentPath} onNavigate={navigate} />
       <main className="flex-grow">{renderContent()}</main>
       <Footer onNavigate={navigate} />

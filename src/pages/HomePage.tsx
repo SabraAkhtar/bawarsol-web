@@ -18,25 +18,25 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
   };
 
   const serviceIconMap: Record<string, React.ReactNode> = {
-    Bot: <Bot className="w-5 h-5 text-[#00F0FF]" />,
-    Sparkles: <Sparkles className="w-5 h-5 text-[#00F0FF]" />,
-    Database: <Database className="w-5 h-5 text-[#00F0FF]" />,
-    Eye: <Eye className="w-5 h-5 text-[#00F0FF]" />,
-    MessageSquareText: <MessageSquareText className="w-5 h-5 text-[#00F0FF]" />,
-    Workflow: <Workflow className="w-5 h-5 text-[#00F0FF]" />,
-    BrainCircuit: <BrainCircuit className="w-5 h-5 text-[#00F0FF]" />,
-    Code2: <Code2 className="w-5 h-5 text-[#00F0FF]" />,
-    Palette: <Palette className="w-5 h-5 text-[#00F0FF]" />,
-    Image: <Image className="w-5 h-5 text-[#00F0FF]" />,
-    Layout: <Layout className="w-5 h-5 text-[#00F0FF]" />,
+    Bot: <Bot className="w-5 h-5 text-blue-600" />,
+    Sparkles: <Sparkles className="w-5 h-5 text-blue-600" />,
+    Database: <Database className="w-5 h-5 text-blue-600" />,
+    Eye: <Eye className="w-5 h-5 text-blue-600" />,
+    MessageSquareText: <MessageSquareText className="w-5 h-5 text-blue-600" />,
+    Workflow: <Workflow className="w-5 h-5 text-blue-600" />,
+    BrainCircuit: <BrainCircuit className="w-5 h-5 text-blue-600" />,
+    Code2: <Code2 className="w-5 h-5 text-blue-600" />,
+    Palette: <Palette className="w-5 h-5 text-blue-600" />,
+    Image: <Image className="w-5 h-5 text-blue-600" />,
+    Layout: <Layout className="w-5 h-5 text-blue-600" />,
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] text-[#F0F0F0] pt-20">
+    <div className="min-h-screen bg-slate-50 text-slate-900 pt-20">
       {/* HERO SECTION */}
-      <section className="relative pt-16 pb-28 overflow-hidden border-b border-white/[0.05] bg-[#050505]">
+      <section className="relative pt-16 pb-28 overflow-hidden border-b border-white/[0.05] bg-slate-50">
         {/* Subtle, refined ambient backdrops */}
-        <div className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-gradient-to-br from-[#00F0FF]/[0.03] to-transparent rounded-full blur-[120px] pointer-events-none transform -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-gradient-to-br from-blue-600/[0.03] to-transparent rounded-full blur-[120px] pointer-events-none transform -translate-x-1/2 -translate-y-1/2" />
         <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-tl from-[#0066FF]/[0.04] to-transparent rounded-full blur-[100px] pointer-events-none transform translate-x-1/3 translate-y-1/3" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -57,9 +57,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   hidden: { opacity: 0, y: 15 },
                   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } }
                 }}
-                className="text-[11px] font-bold text-slate-400 uppercase tracking-[0.25em] flex items-center gap-4"
+                className="text-[11px] font-bold text-slate-500 uppercase tracking-[0.25em] flex items-center gap-4"
               >
-                <span className="w-8 h-[1px] bg-gradient-to-r from-[#00F0FF]/50 to-transparent" />
+                <span className="w-8 h-[1px] bg-gradient-to-r from-blue-600/50 to-transparent" />
                 Enterprise AI Systems
               </motion.div>
 
@@ -69,10 +69,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   hidden: { opacity: 0, y: 20 },
                   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
                 }}
-                className="text-5xl sm:text-6xl lg:text-[76px] font-extrabold tracking-[-0.03em] text-white leading-[1.05]"
+                className="text-5xl sm:text-6xl lg:text-[76px] font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.05]"
               >
                 Engineering <br />
-                <span className="bg-clip-text text-transparent bg-gradient-to-br from-white via-white to-slate-500">
+                <span className="bg-clip-text text-transparent bg-gradient-to-br from-slate-900 via-white to-slate-500">
                   Intelligent Solutions.
                 </span>
               </motion.h1>
@@ -83,7 +83,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   hidden: { opacity: 0, y: 20 },
                   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
                 }}
-                className="text-slate-400 text-lg sm:text-xl font-normal leading-[1.6] max-w-2xl"
+                className="text-slate-500 text-lg sm:text-xl font-normal leading-[1.6] max-w-2xl"
               >
                 We architect AI-powered products, intelligent automation, and scalable software that transform ambitious concepts into robust, real-world systems.
               </motion.p>
@@ -100,7 +100,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   onClick={() => handleNav('/book-a-call')}
                   className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-black font-bold text-sm rounded-full overflow-hidden transition-transform hover:scale-[1.02] active:scale-[0.98]"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#00F0FF]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <span className="relative z-10 flex items-center gap-2">
                     Book a Consultation
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -109,7 +109,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
                 <button
                   onClick={() => handleNav('/services')}
-                  className="group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-medium text-sm text-slate-300 bg-white/[0.02] border border-white/10 hover:bg-white/[0.04] hover:text-white transition-all"
+                  className="group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-medium text-sm text-slate-600 bg-white shadow-sm border border-slate-200 hover:bg-slate-50 border border-slate-200 hover:text-slate-900 transition-all"
                 >
                   Explore Capabilities
                 </button>
@@ -124,15 +124,15 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 className="pt-8 border-t border-white/[0.05] flex flex-wrap gap-x-8 gap-y-3 text-[11px] font-medium text-slate-500 tracking-wide uppercase"
               >
                 <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#00F0FF]/40" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-600/40" />
                   Production Agent Systems
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#00F0FF]/40" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-600/40" />
                   Zero-Hallucination RAG
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#00F0FF]/40" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-600/40" />
                   Enterprise Security
                 </div>
               </motion.div>
@@ -152,7 +152,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       </section>
 
       {/* CORE EXPERTISE / SERVICES SHOWCASE */}
-      <section className="py-28 bg-[#050505] relative overflow-hidden">
+      <section className="py-28 bg-slate-50 relative overflow-hidden">
         {/* Subtle grid texture */}
         <div className="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -166,13 +166,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             className="max-w-2xl mb-20"
           >
             <p className="text-[11px] font-bold text-slate-500 uppercase tracking-[0.25em] flex items-center gap-4 mb-5">
-              <span className="w-8 h-[1px] bg-gradient-to-r from-[#00F0FF]/50 to-transparent" />
+              <span className="w-8 h-[1px] bg-gradient-to-r from-blue-600/50 to-transparent" />
               Core Engineering Capabilities
             </p>
-            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-[-0.03em] text-white leading-[1.1] mb-5">
+            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.1] mb-5">
               Built for Enterprise Scale.
             </h2>
-            <p className="text-slate-400 text-base leading-relaxed">
+            <p className="text-slate-500 text-base leading-relaxed">
               From autonomous decision engines to quantized vision models, BawarSol designs custom architectures tailored for high throughput and precision.
             </p>
           </motion.div>
@@ -187,16 +187,16 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: i * 0.07 }}
                 onClick={() => handleNav('/services')}
-                className="group relative p-6 rounded-2xl bg-white/[0.02] backdrop-blur-xl border border-white/[0.07] hover:border-white/20 transition-all duration-500 cursor-pointer flex flex-col justify-between overflow-hidden"
+                className="group relative p-6 rounded-2xl bg-white shadow-sm backdrop-blur-xl border border-white/[0.07] hover:border-slate-300 transition-all duration-500 cursor-pointer flex flex-col justify-between overflow-hidden"
               >
                 {/* Hover glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#00F0FF]/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
 
                 <div className="relative z-10">
-                  <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center mb-5 group-hover:border-[#00F0FF]/30 transition-all duration-300">
-                    {serviceIconMap[service.iconName] || <Bot className="w-5 h-5 text-[#00F0FF]" />}
+                  <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200 border border-white/[0.08] flex items-center justify-center mb-5 group-hover:border-blue-600/30 transition-all duration-300">
+                    {serviceIconMap[service.iconName] || <Bot className="w-5 h-5 text-blue-600" />}
                   </div>
-                  <h4 className="text-base font-bold text-white mb-2.5 group-hover:text-white/90 transition-colors leading-snug">
+                  <h4 className="text-base font-bold text-slate-900 mb-2.5 group-hover:text-slate-900/90 transition-colors leading-snug">
                     {service.title}
                   </h4>
                   <p className="text-slate-500 text-xs leading-relaxed line-clamp-3">
@@ -205,8 +205,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 </div>
 
                 <div className="relative z-10 pt-5 mt-5 border-t border-white/[0.05] flex items-center justify-between">
-                  <span className="text-[11px] font-semibold text-slate-400 tracking-wide uppercase">Learn More</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-white group-hover:translate-x-1 transition-all duration-300" />
+                  <span className="text-[11px] font-semibold text-slate-500 tracking-wide uppercase">Learn More</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-slate-900 group-hover:translate-x-1 transition-all duration-300" />
                 </div>
               </motion.div>
             ))}
@@ -222,7 +222,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           >
             <button
               onClick={() => handleNav('/services')}
-              className="group inline-flex items-center gap-3 text-sm font-medium text-slate-400 hover:text-white transition-colors"
+              className="group inline-flex items-center gap-3 text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors"
             >
               <span>View all capabilities</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -232,7 +232,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       </section>
 
       {/* INDUSTRY SOLUTIONS PREVIEW */}
-      <section className="py-28 bg-[#050505] border-y border-white/[0.05] relative overflow-hidden">
+      <section className="py-28 bg-slate-50 border-y border-white/[0.05] relative overflow-hidden">
         {/* Ambient glow */}
         <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#0066FF]/[0.03] rounded-full blur-[100px] pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -247,16 +247,16 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           >
             <div>
               <p className="text-[11px] font-bold text-slate-500 uppercase tracking-[0.25em] flex items-center gap-4 mb-5">
-                <span className="w-8 h-[1px] bg-gradient-to-r from-[#00F0FF]/50 to-transparent" />
+                <span className="w-8 h-[1px] bg-gradient-to-r from-blue-600/50 to-transparent" />
                 Industry Impact
               </p>
-              <h2 className="text-4xl sm:text-5xl font-extrabold tracking-[-0.03em] text-white leading-[1.1]">
+              <h2 className="text-4xl sm:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.1]">
                 AI for Specialized Sectors.
               </h2>
             </div>
             <button
               onClick={() => handleNav('/industries')}
-              className="group inline-flex items-center gap-3 text-sm font-medium text-slate-400 hover:text-white transition-colors shrink-0"
+              className="group inline-flex items-center gap-3 text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors shrink-0"
             >
               <span>View all 8 industries</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -273,21 +273,21 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: i * 0.1 }}
                 onClick={() => handleNav('/industries')}
-                className="group relative p-6 rounded-2xl bg-white/[0.02] backdrop-blur-xl border border-white/[0.07] hover:border-white/20 transition-all duration-500 cursor-pointer overflow-hidden"
+                className="group relative p-6 rounded-2xl bg-white shadow-sm backdrop-blur-xl border border-white/[0.07] hover:border-slate-300 transition-all duration-500 cursor-pointer overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-[#0066FF]/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
 
                 <div className="relative z-10">
-                  <p className="text-[10px] font-bold text-[#00F0FF]/70 uppercase tracking-[0.2em] mb-3">
+                  <p className="text-[10px] font-bold text-blue-600/70 uppercase tracking-[0.2em] mb-3">
                     {ind.name}
                   </p>
-                  <h3 className="text-base font-bold text-white mb-3 leading-snug group-hover:text-white/90 transition-colors">
+                  <h3 className="text-base font-bold text-slate-900 mb-3 leading-snug group-hover:text-slate-900/90 transition-colors">
                     {ind.tagline}
                   </h3>
                   <p className="text-slate-500 text-xs leading-relaxed mb-5 line-clamp-3">
                     {ind.description}
                   </p>
-                  <div className="text-[10px] text-[#00F0FF]/60 bg-white/[0.03] px-3 py-2 rounded-lg border border-white/[0.05] font-mono tracking-wide">
+                  <div className="text-[10px] text-blue-600/60 bg-white shadow-sm border border-slate-200 px-3 py-2 rounded-lg border border-white/[0.05] font-mono tracking-wide">
                     {ind.metrics}
                   </div>
                 </div>
@@ -298,8 +298,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       </section>
 
       {/* FEATURED PROJECTS GATEWAY */}
-      <section className="py-28 bg-[#050505] relative overflow-hidden">
-        <div className="absolute top-0 left-1/2 w-[600px] h-[600px] bg-[#00F0FF]/[0.02] rounded-full blur-[120px] pointer-events-none -translate-x-1/2" />
+      <section className="py-28 bg-slate-50 relative overflow-hidden">
+        <div className="absolute top-0 left-1/2 w-[600px] h-[600px] bg-blue-600/[0.02] rounded-full blur-[120px] pointer-events-none -translate-x-1/2" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
           {/* Section Header */}
@@ -311,13 +311,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             className="max-w-2xl mb-20"
           >
             <p className="text-[11px] font-bold text-slate-500 uppercase tracking-[0.25em] flex items-center gap-4 mb-5">
-              <span className="w-8 h-[1px] bg-gradient-to-r from-[#00F0FF]/50 to-transparent" />
+              <span className="w-8 h-[1px] bg-gradient-to-r from-blue-600/50 to-transparent" />
               Case Studies & Systems
             </p>
-            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-[-0.03em] text-white leading-[1.1] mb-5">
+            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.1] mb-5">
               Featured Engineering Work.
             </h2>
-            <p className="text-slate-400 text-base leading-relaxed">
+            <p className="text-slate-500 text-base leading-relaxed">
               Real-world systems deployed by BawarSol across healthcare, financial audit, edge vision, and freight automation.
             </p>
           </motion.div>
@@ -332,7 +332,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: i * 0.12 }}
                 onClick={() => handleNav('/portfolio')}
-                className="group relative rounded-2xl bg-white/[0.02] border border-white/[0.07] overflow-hidden cursor-pointer hover:border-white/20 transition-all duration-500"
+                className="group relative rounded-2xl bg-white shadow-sm border border-white/[0.07] overflow-hidden cursor-pointer hover:border-slate-300 transition-all duration-500"
               >
                 {/* Image */}
                 <div className="h-52 overflow-hidden relative">
@@ -342,29 +342,29 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/50 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-50 via-slate-50/50 to-transparent" />
                   {/* Category pill */}
-                  <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-[10px] font-bold bg-black/60 text-white border border-white/10 backdrop-blur-sm tracking-wide uppercase">
+                  <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-[10px] font-bold bg-white/90 text-slate-900 border border-slate-200 backdrop-blur-sm tracking-wide uppercase">
                     {proj.category}
                   </span>
                 </div>
 
                 {/* Content */}
                 <div className="p-6 space-y-3">
-                  <h3 className="text-base font-bold text-white leading-snug group-hover:text-white/90 transition-colors">
+                  <h3 className="text-base font-bold text-slate-900 leading-snug group-hover:text-slate-900/90 transition-colors">
                     {proj.title}
                   </h3>
                   <p className="text-slate-500 text-xs leading-relaxed line-clamp-2">
                     {proj.description}
                   </p>
                   <div className="flex items-center gap-2 pt-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#00F0FF]/50" />
-                    <span className="text-[11px] text-[#00F0FF]/70 font-medium tracking-wide">{proj.impactMetric}</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-600/50" />
+                    <span className="text-[11px] text-blue-600/70 font-medium tracking-wide">{proj.impactMetric}</span>
                   </div>
                 </div>
 
                 {/* Hover bottom border accent */}
-                <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#00F0FF]/0 via-[#00F0FF]/40 to-[#00F0FF]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-600/0 via-blue-600/40 to-blue-600/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </motion.div>
             ))}
           </div>
@@ -381,7 +381,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               onClick={() => handleNav('/portfolio')}
               className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-black font-bold text-sm rounded-full overflow-hidden transition-transform hover:scale-[1.02] active:scale-[0.98]"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-[#00F0FF]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <span className="relative z-10 flex items-center gap-2">
                 View Full Portfolio
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

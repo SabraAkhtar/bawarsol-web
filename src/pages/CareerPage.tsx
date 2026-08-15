@@ -51,9 +51,9 @@ export const CareerPage: React.FC<CareerPageProps> = ({ onNavigate, onApplyJob }
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] text-[#F0F0F0] pt-24 pb-12 overflow-hidden">
+    <div className="min-h-screen bg-slate-50 text-slate-900 pt-24 pb-12 overflow-hidden">
       {/* Hero Header */}
-      <section className="relative py-20 bg-[#050505] border-b border-white/10 hero-radial-bg text-center">
+      <section className="relative py-20 bg-slate-50 border-b border-slate-200 hero-radial-bg text-center">
         <motion.div 
           initial="hidden"
           whileInView="visible"
@@ -61,19 +61,19 @@ export const CareerPage: React.FC<CareerPageProps> = ({ onNavigate, onApplyJob }
           variants={containerVariants}
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 relative z-10"
         >
-          <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#00F0FF]/10 border border-[#00F0FF]/30 text-[#00F0FF] text-xs font-bold uppercase tracking-wider shadow-[0_0_20px_rgba(0,240,255,0.1)]">
-            <Sparkles className="w-4 h-4 text-[#00F0FF]" />
+          <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-600/10 border border-blue-600/30 text-blue-600 text-xs font-bold uppercase tracking-wider shadow-[0_0_20px_rgba(0,240,255,0.1)]">
+            <Sparkles className="w-4 h-4 text-blue-600" />
             <span>Engineering Talent & Careers</span>
           </motion.div>
 
-          <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white tracking-tight">
+          <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-slate-900 tracking-tight">
             Build the Future <br />
-            <span className="font-serif italic font-normal text-[#00F0FF] accent-glow">
+            <span className="font-serif italic font-normal text-blue-600 accent-glow">
               With BawarSol
             </span>
           </motion.h1>
 
-          <motion.p variants={itemVariants} className="text-slate-300 text-base sm:text-xl max-w-3xl mx-auto leading-relaxed">
+          <motion.p variants={itemVariants} className="text-slate-600 text-base sm:text-xl max-w-3xl mx-auto leading-relaxed">
             Join an elite engineering team building autonomous agents, multi-modal LLMs, high-speed vision pipelines, and scalable AI infrastructure for global clients.
           </motion.p>
 
@@ -85,8 +85,8 @@ export const CareerPage: React.FC<CareerPageProps> = ({ onNavigate, onApplyJob }
                 onClick={() => setSelectedDept(dept)}
                 className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all ${
                   selectedDept === dept
-                    ? 'bg-[#00F0FF] text-black shadow-[0_0_20px_rgba(0,240,255,0.3)] scale-105'
-                    : 'bg-white/[0.04] text-slate-400 hover:text-white border border-white/10 hover:border-white/30'
+                    ? 'bg-blue-600 text-black shadow-[0_0_20px_rgba(0,240,255,0.3)] scale-105'
+                    : 'bg-slate-50 border border-slate-200 text-slate-500 hover:text-slate-900 border border-slate-200 hover:border-white/30'
                 }`}
               >
                 {dept}
@@ -98,28 +98,28 @@ export const CareerPage: React.FC<CareerPageProps> = ({ onNavigate, onApplyJob }
 
       {/* Open Positions Grid */}
       <section className="py-20 relative">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[#00F0FF]/5 rounded-full blur-[150px] pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-blue-600/5 rounded-full blur-[150px] pointer-events-none" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-white/10 pb-6"
+            className="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-slate-200 pb-6"
           >
-            <h2 className="text-3xl font-extrabold text-white">Open Engineering Roles</h2>
-            <span className="px-4 py-2 rounded-full bg-[#00F0FF]/10 border border-[#00F0FF]/20 text-sm text-[#00F0FF] font-bold shadow-sm">
+            <h2 className="text-3xl font-extrabold text-slate-900">Open Engineering Roles</h2>
+            <span className="px-4 py-2 rounded-full bg-blue-600/10 border border-blue-600/20 text-sm text-blue-600 font-bold shadow-sm">
               {filteredJobs.length} active positions in database
             </span>
           </motion.div>
 
           {loading ? (
-            <div className="text-center py-20 text-[#00F0FF] font-bold animate-pulse text-lg">
+            <div className="text-center py-20 text-blue-600 font-bold animate-pulse text-lg">
               Loading open positions from BawarSol database...
             </div>
           ) : filteredJobs.length === 0 ? (
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center py-20 p-8 rounded-[2rem] bg-white/[0.02] border border-white/10 backdrop-blur-sm">
-              <p className="text-slate-400 text-lg">No active positions found in this department.</p>
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center py-20 p-8 rounded-[2rem] bg-white shadow-sm border border-slate-200 backdrop-blur-sm">
+              <p className="text-slate-500 text-lg">No active positions found in this department.</p>
             </motion.div>
           ) : (
             <motion.div 
@@ -136,47 +136,47 @@ export const CareerPage: React.FC<CareerPageProps> = ({ onNavigate, onApplyJob }
                     transition={{ duration: 0.3 }}
                     whileHover={{ y: -5 }}
                     key={job.id}
-                    className="p-8 sm:p-10 rounded-[2rem] bg-white/[0.02] backdrop-blur-2xl border border-white/5 hover:border-[#00F0FF]/40 hover:bg-white/[0.04] transition-all shadow-xl flex flex-col justify-between group overflow-hidden relative"
+                    className="p-8 sm:p-10 rounded-[2rem] bg-white shadow-sm backdrop-blur-2xl border border-slate-200 hover:border-blue-600/40 hover:bg-slate-50 border border-slate-200 transition-all shadow-xl flex flex-col justify-between group overflow-hidden relative"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#00F0FF]/[0.02] to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-600/[0.02] to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity" />
                     
                     <div className="space-y-6 relative z-10">
-                      <div className="flex items-start justify-between gap-4 border-b border-white/5 pb-6">
+                      <div className="flex items-start justify-between gap-4 border-b border-slate-200 pb-6">
                         <div>
-                          <span className="text-xs font-bold text-[#00F0FF] uppercase tracking-wider block mb-2">
+                          <span className="text-xs font-bold text-blue-600 uppercase tracking-wider block mb-2">
                             {job.department}
                           </span>
-                          <h3 className="text-2xl font-extrabold text-white group-hover:text-[#00F0FF] transition-colors leading-tight">
+                          <h3 className="text-2xl font-extrabold text-slate-900 group-hover:text-blue-600 transition-colors leading-tight">
                             {job.title}
                           </h3>
                         </div>
-                        <span className="px-4 py-1.5 rounded-full text-xs font-bold bg-[#00F0FF]/10 text-[#00F0FF] border border-[#00F0FF]/30 shrink-0 uppercase tracking-wide">
+                        <span className="px-4 py-1.5 rounded-full text-xs font-bold bg-blue-600/10 text-blue-600 border border-blue-600/30 shrink-0 uppercase tracking-wide">
                           {job.employmentType}
                         </span>
                       </div>
 
-                      <div className="flex flex-wrap items-center gap-6 text-sm text-slate-400 font-medium">
-                        <span className="flex items-center gap-2 bg-black/40 px-3 py-1.5 rounded-lg border border-white/5">
-                          <MapPin className="w-4 h-4 text-[#00F0FF]" />
+                      <div className="flex flex-wrap items-center gap-6 text-sm text-slate-500 font-medium">
+                        <span className="flex items-center gap-2 bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200">
+                          <MapPin className="w-4 h-4 text-blue-600" />
                           {job.location}
                         </span>
-                        <span className="flex items-center gap-2 bg-black/40 px-3 py-1.5 rounded-lg border border-white/5">
-                          <Briefcase className="w-4 h-4 text-[#00F0FF]" />
+                        <span className="flex items-center gap-2 bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200">
+                          <Briefcase className="w-4 h-4 text-blue-600" />
                           {job.experience}
                         </span>
                       </div>
 
-                      <p className="text-slate-300 text-base leading-relaxed">
+                      <p className="text-slate-600 text-base leading-relaxed">
                         {job.description}
                       </p>
 
                       <div className="space-y-3 pt-4">
-                        <span className="text-xs font-bold text-slate-400 block uppercase tracking-wider">Required Skills:</span>
+                        <span className="text-xs font-bold text-slate-500 block uppercase tracking-wider">Required Skills:</span>
                         <div className="flex flex-wrap gap-2">
                           {job.skills.map((skill) => (
                             <span
                               key={skill}
-                              className="text-xs font-bold bg-white/[0.03] text-white px-3 py-1.5 rounded-xl border border-white/10 hover:border-[#00F0FF]/50 hover:text-[#00F0FF] transition-colors cursor-default"
+                              className="text-xs font-bold bg-white shadow-sm border border-slate-200 text-slate-900 px-3 py-1.5 rounded-xl border border-slate-200 hover:border-blue-600/50 hover:text-blue-600 transition-colors cursor-default"
                             >
                               {skill}
                             </span>
@@ -185,11 +185,11 @@ export const CareerPage: React.FC<CareerPageProps> = ({ onNavigate, onApplyJob }
                       </div>
                     </div>
 
-                    <div className="pt-8 mt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 relative z-10">
-                      <span className="text-sm font-bold text-slate-400">Competitive Salary + Equity</span>
+                    <div className="pt-8 mt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 relative z-10">
+                      <span className="text-sm font-bold text-slate-500">Competitive Salary + Equity</span>
                       <button
                         onClick={() => onApplyJob(job.slug)}
-                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-sm font-bold text-black bg-[#00F0FF] hover:bg-[#33F3FF] transition-all shadow-[0_0_20px_rgba(0,240,255,0.2)] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)]"
+                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-sm font-bold text-black bg-blue-600 hover:bg-[#33F3FF] transition-all shadow-[0_0_20px_rgba(0,240,255,0.2)] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)]"
                       >
                         <span>Apply Now</span>
                         <ArrowRight className="w-4 h-4" />

@@ -13,9 +13,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   };
 
   return (
-    <footer className="bg-[#050505] text-slate-400 pt-16 pb-12 border-t border-white/10 relative overflow-hidden">
+    <footer className="bg-slate-50 text-slate-500 pt-16 pb-12 border-t border-slate-200 relative overflow-hidden">
       {/* Background glow accents */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#00F0FF]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#0066FF]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -25,20 +25,20 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <button onClick={() => handleNav('/')} className="text-left focus:outline-none">
               <Logo size="lg" showTagline={true} />
             </button>
-            <p className="text-slate-400 text-sm max-w-md leading-relaxed">
+            <p className="text-slate-500 text-sm max-w-md leading-relaxed">
               BawarSol is a premium digital agency specializing in Web Development, Graphic Design, AI Solutions, Automation, and Branding — building intelligent, scalable platforms for ambitious enterprises worldwide.
             </p>
-            <div className="pt-2 space-y-2 text-xs text-slate-400">
+            <div className="pt-2 space-y-2 text-xs text-slate-500">
               <div className="flex items-center gap-2">
-                <Globe className="w-4 h-4 text-[#00F0FF]" />
+                <Globe className="w-4 h-4 text-blue-600" />
                 <span>Global Engineering Hubs: USA & Remote AI Labs</span>
               </div>
-              <a href="mailto:infobawarsol@gmail.com" className="flex items-center gap-2 hover:text-[#00F0FF] transition-colors">
-                <Mail className="w-4 h-4 text-[#00F0FF]" />
+              <a href="mailto:infobawarsol@gmail.com" className="flex items-center gap-2 hover:text-blue-600 transition-colors">
+                <Mail className="w-4 h-4 text-blue-600" />
                 <span>infobawarsol@gmail.com</span>
               </a>
-              <a href="https://wa.me/923374667730" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-[#00F0FF] transition-colors">
-                <Phone className="w-4 h-4 text-[#00F0FF]" />
+              <a href="https://wa.me/923374667730" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-blue-600 transition-colors">
+                <Phone className="w-4 h-4 text-blue-600" />
                 <span>+92 337 4667730</span>
               </a>
             </div>
@@ -58,7 +58,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   title={s.label}
-                  className="px-3 py-1.5 rounded-lg bg-white/[0.04] border border-white/10 text-xs text-slate-400 hover:text-[#00F0FF] hover:border-[#00F0FF]/40 transition-all"
+                  className="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 border border-slate-200 text-xs text-slate-500 hover:text-blue-600 hover:border-blue-600/40 transition-all"
                 >
                   {s.icon} {s.label}
                 </a>
@@ -68,7 +68,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
           {/* Services Column */}
           <div>
-            <h4 className="text-white font-semibold text-sm uppercase tracking-wider mb-4 border-b border-white/10 pb-2">
+            <h4 className="text-slate-900 font-semibold text-sm uppercase tracking-wider mb-4 border-b border-slate-200 pb-2">
               Services
             </h4>
             <ul className="space-y-2.5 text-sm">
@@ -83,7 +83,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <li key={item.name}>
                   <button
                     onClick={() => handleNav(item.path)}
-                    className="hover:text-[#00F0FF] transition-colors text-slate-400 text-left"
+                    className="hover:text-blue-600 transition-colors text-slate-500 text-left"
                   >
                     {item.name}
                   </button>
@@ -94,7 +94,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
           {/* Company Column */}
           <div>
-            <h4 className="text-white font-semibold text-sm uppercase tracking-wider mb-4 border-b border-white/10 pb-2">
+            <h4 className="text-slate-900 font-semibold text-sm uppercase tracking-wider mb-4 border-b border-slate-200 pb-2">
               Company
             </h4>
             <ul className="space-y-2.5 text-sm">
@@ -110,7 +110,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <li key={item.name}>
                   <button
                     onClick={() => handleNav(item.path)}
-                    className="hover:text-[#00F0FF] transition-colors text-slate-400 text-left"
+                    className="hover:text-blue-600 transition-colors text-slate-500 text-left"
                   >
                     {item.name}
                   </button>
@@ -121,16 +121,16 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
           {/* Get Started Column */}
           <div>
-            <h4 className="text-white font-semibold text-sm uppercase tracking-wider mb-4 border-b border-white/10 pb-2">
+            <h4 className="text-slate-900 font-semibold text-sm uppercase tracking-wider mb-4 border-b border-slate-200 pb-2">
               Get Started
             </h4>
-            <p className="text-xs text-slate-400 mb-4 leading-relaxed">
+            <p className="text-xs text-slate-500 mb-4 leading-relaxed">
               Ready to transform your business with custom AI software?
             </p>
             <div className="space-y-3">
               <button
                 onClick={() => handleNav('/book-a-call')}
-                className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs text-black bg-[#00F0FF] hover:bg-[#33F3FF] transition-all shadow-md shadow-[#00F0FF]/20"
+                className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs text-black bg-blue-600 hover:bg-[#33F3FF] transition-all shadow-md shadow-blue-600/20"
               >
                 <span>Book a Call</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -138,7 +138,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
               <button
                 onClick={() => handleNav('/contact')}
-                className="w-full text-center px-4 py-2 rounded-xl text-xs font-medium text-slate-300 bg-white/[0.03] border border-white/10 hover:border-[#00F0FF]/40 hover:text-[#00F0FF] transition-colors"
+                className="w-full text-center px-4 py-2 rounded-xl text-xs font-medium text-slate-600 bg-white shadow-sm border border-slate-200 border border-slate-200 hover:border-blue-600/40 hover:text-blue-600 transition-colors"
               >
                 Start a Project
               </button>
@@ -147,16 +147,16 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+        <div className="pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 gap-4">
           <div>
-            © 2026 <span className="text-white font-semibold">BawarSol.ai</span>. All rights reserved. Building the future of digital experiences.
+            © 2026 <span className="text-slate-900 font-semibold">BawarSol.ai</span>. All rights reserved. Building the future of digital experiences.
           </div>
           <div className="flex items-center gap-6">
-            <button onClick={() => handleNav('/admin')} className="hover:text-[#00F0FF] transition-colors">
+            <button onClick={() => handleNav('/admin')} className="hover:text-blue-600 transition-colors">
               Admin Portal
             </button>
             <span className="text-slate-700">•</span>
-            <span className="text-slate-400">SOC2 & ISO 27001 Compliant AI Operations</span>
+            <span className="text-slate-500">SOC2 & ISO 27001 Compliant AI Operations</span>
           </div>
         </div>
       </div>

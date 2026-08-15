@@ -218,10 +218,10 @@ export const AINodeVisual: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-full min-h-[360px] rounded-2xl overflow-hidden bg-[#050505]/90 border border-white/10 shadow-2xl">
+    <div className="relative w-full h-full min-h-[360px] rounded-2xl overflow-hidden bg-slate-50/90 border border-slate-200 shadow-2xl">
       <canvas ref={canvasRef} className="w-full h-full block" />
-      <div className="absolute top-4 left-4 flex items-center gap-2 bg-[#050505]/90 backdrop-blur px-3 py-1.5 rounded-full border border-[#00F0FF]/30 text-xs text-[#00F0FF] font-medium shadow-md">
-        <span className="w-2 h-2 rounded-full bg-[#00F0FF] animate-ping" />
+      <div className="absolute top-4 left-4 flex items-center gap-2 bg-slate-50/90 backdrop-blur px-3 py-1.5 rounded-full border border-blue-600/30 text-xs text-blue-600 font-medium shadow-md">
+        <span className="w-2 h-2 rounded-full bg-blue-600 animate-ping" />
         <span>Live Neural Workflow Swarm</span>
       </div>
     </div>
