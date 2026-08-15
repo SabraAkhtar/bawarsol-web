@@ -286,19 +286,24 @@ export const BlogsPage: React.FC<BlogsPageProps> = ({ onNavigate, onSelectBlog }
                   <div className="space-y-2">
                     <span className="inline-flex items-center gap-2 text-[10px] sm:text-xs font-bold uppercase tracking-[0.3em] text-[#00F0FF]">
                       <Sparkles className="w-3.5 h-3.5" />
-                      The Creative Mind
+                      Operational Excellence
                     </span>
                     <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
                       Meet <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-500">Sabra Akhtar</span>
                     </h3>
-                    <p className="text-[#00F0FF]/80 font-medium tracking-wide">Web Developer & Graphic Designer</p>
+                    <p className="text-[#00F0FF]/80 font-medium tracking-wide">Co-Founder & Admin Manager</p>
                   </div>
                   
                   <div className="w-12 h-[2px] bg-gradient-to-r from-[#00F0FF] to-transparent mx-auto md:mx-0" />
                   
-                  <p className="text-slate-400 text-sm sm:text-base leading-relaxed max-w-3xl mx-auto md:mx-0">
-                    I love turning ideas into creative, modern, and user-friendly digital experiences. I create professional websites and eye-catching designs that help brands build a strong online presence. With a blend of creativity and technology, I’m always focused on learning, creating, and bringing fresh ideas to life.
-                  </p>
+                  <div className="text-slate-400 text-sm sm:text-base leading-relaxed max-w-3xl mx-auto md:mx-0 space-y-3">
+                    <p>
+                      <strong className="text-white">Sabra Akhtar</strong> is the Co-Founder and <strong className="text-white">Admin Manager at BawarSol</strong>. She is passionate about combining creativity, organization, and technology to help build and grow a strong and professional company.
+                    </p>
+                    <p>
+                      At BawarSol, she oversees administrative operations, coordinates internal activities, and contributes to creating an efficient and productive work environment. She is committed to supporting the team, managing day-to-day operations, and helping turn ideas into meaningful results.
+                    </p>
+                  </div>
                   
                   <div className="pt-4 flex items-center justify-center md:justify-start gap-4">
                     <button onClick={() => window.location.href='/portfolio'} className="px-6 py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white text-sm font-bold transition-all flex items-center gap-2 group/btn cursor-pointer shadow-lg hover:shadow-[#00F0FF]/20">
