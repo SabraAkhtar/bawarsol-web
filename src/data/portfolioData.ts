@@ -1,3 +1,9 @@
+import gdFlyer1 from '../assets/images/gd_flyer_study.jpg';
+import gdShowcase from '../assets/images/gd_showcase_web.jpg';
+import gdEcom1 from '../assets/images/gd_ecom1.jpg';
+import gdEcom2 from '../assets/images/gd_ecom2.jpg';
+import gdFlyer2 from '../assets/images/gd_flyer2.jpg';
+
 export interface PortfolioProject {
   id: string;
   title: string;
@@ -20,7 +26,7 @@ export const WEB_PROJECTS: PortfolioProject[] = [
     description: 'Real-time weather application with location-based forecasting using the OpenWeather API, built with React.',
     impactMetric: 'Live weather data for any city worldwide',
     technologies: ['React', 'OpenWeather API'],
-    imageUrl: 'https://bawarsol1.vercel.app/Assets/website%20card%20imges/weather%20app.png',
+    imageUrl: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?auto=format&fit=crop&w=800&q=80',
     liveUrl: 'https://weather-app-beta-two-43.vercel.app/',
   },
   {
@@ -31,7 +37,7 @@ export const WEB_PROJECTS: PortfolioProject[] = [
     description: 'Full institutional website for Beacon Light Academy with modern design, built on Next.js and Tailwind CSS.',
     impactMetric: 'Full responsive academic institution website',
     technologies: ['Next.js', 'Tailwind CSS'],
-    imageUrl: 'https://bawarsol1.vercel.app/Assets/website%20card%20imges/beacon%20light%20accadmey.jfif',
+    imageUrl: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80',
     liveUrl: 'https://beaconlight.vercel.app/',
   },
   {
@@ -42,7 +48,7 @@ export const WEB_PROJECTS: PortfolioProject[] = [
     description: 'Premium consultancy platform with smooth Framer Motion animations and TypeScript-powered UI built in React.',
     impactMetric: 'High-conversion consultancy landing page',
     technologies: ['React', 'TypeScript', 'Framer Motion'],
-    imageUrl: 'https://bawarsol1.vercel.app/Assets/website%20card%20imges/scholarmate.avif',
+    imageUrl: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
     liveUrl: 'https://scholarmate-phi.vercel.app/',
   },
   {
@@ -53,7 +59,7 @@ export const WEB_PROJECTS: PortfolioProject[] = [
     description: 'Animated developer portfolio with GSAP-powered transitions and CSS Modules for a premium feel.',
     impactMetric: 'Stunning portfolio with advanced animations',
     technologies: ['React', 'GSAP', 'CSS Modules'],
-    imageUrl: 'https://bawarsol1.vercel.app/Assets/website%20card%20imges/developer%20portfolio.jfif',
+    imageUrl: gdShowcase,
     liveUrl: 'https://developer1-beige.vercel.app/',
   },
   {
@@ -64,7 +70,7 @@ export const WEB_PROJECTS: PortfolioProject[] = [
     description: 'Elegant restaurant landing page with CSS Grid layouts and Framer Motion animations for an immersive dining experience.',
     impactMetric: 'Fully responsive restaurant showcase',
     technologies: ['React', 'CSS Grid', 'Framer Motion'],
-    imageUrl: 'https://bawarsol1.vercel.app/Assets/website%20card%20imges/restaurant-landing-page-.avif',
+    imageUrl: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80',
     liveUrl: 'https://restaurant-landing-page1-eight.vercel.app/',
   },
   {
@@ -75,7 +81,7 @@ export const WEB_PROJECTS: PortfolioProject[] = [
     description: 'Full-stack recipe discovery app with MongoDB backend, Next.js SSR, and Tailwind CSS styling.',
     impactMetric: 'Full-stack app with persistent database',
     technologies: ['Next.js', 'MongoDB', 'Tailwind CSS'],
-    imageUrl: 'https://bawarsol1.vercel.app/Assets/website%20card%20imges/recipe%20app.webp',
+    imageUrl: 'https://images.unsplash.com/photo-1466637574441-749b8f19452f?auto=format&fit=crop&w=800&q=80',
     liveUrl: 'https://new-recipe-app-alpha.vercel.app/',
   },
   {
@@ -86,7 +92,7 @@ export const WEB_PROJECTS: PortfolioProject[] = [
     description: 'Feature-rich Netflix UI clone with real movie data via TMDB API and Firebase authentication.',
     impactMetric: 'Full authentication + live movie data',
     technologies: ['React', 'TMDB API', 'Firebase'],
-    imageUrl: 'https://bawarsol1.vercel.app/Assets/website%20card%20imges/netflix%20clone.jfif',
+    imageUrl: 'https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?auto=format&fit=crop&w=800&q=80',
     liveUrl: 'https://netflix-clone-seven-pink-68.vercel.app/',
   },
   {
@@ -97,7 +103,7 @@ export const WEB_PROJECTS: PortfolioProject[] = [
     description: 'YouTube clone powered by RapidAPI with Redux state management and full video browsing experience.',
     impactMetric: 'Real-time video data with Redux state',
     technologies: ['React', 'RapidAPI', 'Redux'],
-    imageUrl: 'https://bawarsol1.vercel.app/Assets/website%20card%20imges/youtube%20clone.png',
+    imageUrl: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80',
     liveUrl: 'https://youtube-clone-fawn-rho.vercel.app/',
   },
   {
@@ -108,7 +114,7 @@ export const WEB_PROJECTS: PortfolioProject[] = [
     description: 'Premium digital agency website built with Next.js and React with smooth Framer Motion animations.',
     impactMetric: 'High-end agency website with premium animations',
     technologies: ['Next.js', 'React', 'Framer Motion'],
-    imageUrl: 'https://bawarsol1.vercel.app/Assets/website%20card%20imges/naya%20sol%20agency.webp',
+    imageUrl: gdShowcase,
     liveUrl: 'https://naya-sol.vercel.app/',
   },
   {
@@ -119,7 +125,7 @@ export const WEB_PROJECTS: PortfolioProject[] = [
     description: 'Professional construction company website with fully responsive CSS3 design.',
     impactMetric: 'Fully responsive corporate website',
     technologies: ['React', 'CSS3', 'Responsive'],
-    imageUrl: 'https://bawarsol1.vercel.app/Assets/website%20card%20imges/construction-%20website.avif',
+    imageUrl: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80',
     liveUrl: 'https://buildcraft-construction-teal.vercel.app/',
   },
   {
@@ -130,7 +136,7 @@ export const WEB_PROJECTS: PortfolioProject[] = [
     description: 'Full-stack food ordering platform with Node.js/Express backend and React frontend.',
     impactMetric: 'Full-stack food ordering platform',
     technologies: ['React', 'Node.js', 'Express'],
-    imageUrl: 'https://bawarsol1.vercel.app/Assets/website%20card%20imges/zyro%20food.jfif',
+    imageUrl: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80',
     liveUrl: 'https://zyro-eight-psi.vercel.app/',
   },
   {
@@ -141,7 +147,7 @@ export const WEB_PROJECTS: PortfolioProject[] = [
     description: 'Shopify-powered cosmetics e-commerce store with custom Liquid theme and JavaScript enhancements.',
     impactMetric: 'Live Shopify e-commerce store',
     technologies: ['Shopify', 'Liquid', 'JavaScript'],
-    imageUrl: 'https://bawarsol1.vercel.app/Assets/website%20card%20imges/cosmatic%20castle.png',
+    imageUrl: gdEcom1,
     liveUrl: 'https://cosmetic-castle.vercel.app/',
   },
   {
@@ -152,7 +158,7 @@ export const WEB_PROJECTS: PortfolioProject[] = [
     description: 'Personal developer portfolio built with React, Vite, and Framer Motion for smooth transitions.',
     impactMetric: 'Fast Vite-powered portfolio with animations',
     technologies: ['React', 'Vite', 'Framer Motion'],
-    imageUrl: 'https://bawarsol1.vercel.app/Assets/website%20card%20imges/my%20portfoli.jpg',
+    imageUrl: gdShowcase,
     liveUrl: 'https://my-web-portfolio-website.vercel.app/',
   },
   {
@@ -163,7 +169,7 @@ export const WEB_PROJECTS: PortfolioProject[] = [
     description: 'React app that finds the meaning of any name using a REST API.',
     impactMetric: 'Instant name meaning lookup',
     technologies: ['React', 'REST API'],
-    imageUrl: 'https://bawarsol1.vercel.app/Assets/website%20card%20imges/name%20meaning%20finder.jfif',
+    imageUrl: 'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=800&q=80',
     liveUrl: 'https://name-menaing.vercel.app/',
   },
   {
@@ -174,7 +180,7 @@ export const WEB_PROJECTS: PortfolioProject[] = [
     description: 'Clean and responsive mini website built with pure HTML5, CSS3, and JavaScript.',
     impactMetric: 'Lightweight, fast-loading static site',
     technologies: ['HTML5', 'CSS3', 'JavaScript'],
-    imageUrl: 'https://bawarsol1.vercel.app/Assets/website%20card%20imges/mini%20website.png',
+    imageUrl: 'https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=800&q=80',
     liveUrl: 'https://mini-website-dun.vercel.app/',
   },
 ];
@@ -244,11 +250,6 @@ export const AI_PROJECTS: PortfolioProject[] = [
 ];
 
 // ── Graphic Design Portfolio ──────────────────────────────────────────────────
-import gdFlyer1 from '../assets/images/gd_flyer_study.jpg';
-import gdShowcase from '../assets/images/gd_showcase_web.jpg';
-import gdEcom1 from '../assets/images/gd_ecom1.jpg';
-import gdEcom2 from '../assets/images/gd_ecom2.jpg';
-import gdFlyer2 from '../assets/images/gd_flyer2.jpg';
 
 export const DESIGN_PROJECTS: PortfolioProject[] = [
   {
