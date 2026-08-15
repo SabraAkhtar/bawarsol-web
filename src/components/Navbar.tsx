@@ -28,7 +28,6 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate }) => {
     { name: 'Services', path: '/services' },
     { name: 'Industries', path: '/industries' },
     { name: 'Portfolio', path: '/portfolio' },
-    { name: 'Pricing', path: '/pricing' },
     { name: 'Blogs', path: '/blogs' },
     { name: 'Career', path: '/career' },
     { name: 'Contact', path: '/contact' },

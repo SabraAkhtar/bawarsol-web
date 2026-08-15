@@ -103,7 +103,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 { name: 'Industries', path: '/industries' },
                 { name: 'Portfolio', path: '/portfolio' },
                 { name: 'Blogs & Insights', path: '/blogs' },
-                { name: 'Pricing', path: '/pricing' },
                 { name: 'Career Opportunities', path: '/career' },
                 { name: 'Contact Us', path: '/contact' },
               ].map((item) => (

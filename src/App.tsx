@@ -13,7 +13,6 @@ import { ContactPage } from './pages/ContactPage';
 import { BookCallPage } from './pages/BookCallPage';
 import { AdminPage } from './pages/AdminPage';
 import { AboutPage } from './pages/AboutPage';
-import { PricingPage } from './pages/PricingPage';
 
 export function App() {
   const [currentPath, setCurrentPath] = useState<string>(window.location.pathname || '/');
@@ -80,9 +79,6 @@ export function App() {
     }
     if (currentPath === '/about') {
       return <AboutPage onNavigate={navigate} />;
-    }
-    if (currentPath === '/pricing') {
-      return <PricingPage onNavigate={navigate} />;
     }
 
     // Default fallback
