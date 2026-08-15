@@ -104,9 +104,9 @@ export const PricingPage: React.FC<PricingPageProps> = ({ onNavigate }) => {
             <span>Transparent Pricing</span>
           </motion.div>
 
-          <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-slate-900 tracking-tight">
+          <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-[#0A1628] tracking-tight">
             Invest in <br />
-            <span className="font-serif italic font-normal text-blue-600 accent-glow">
+            <span className="font-serif italic font-normal text-blue-600">
               Excellence
             </span>
           </motion.h1>
@@ -145,7 +145,7 @@ export const PricingPage: React.FC<PricingPageProps> = ({ onNavigate }) => {
 
                 {plan.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-30">
-                    <span className="px-4 py-1.5 rounded-full text-xs font-bold bg-blue-600 text-black shadow-lg shadow-blue-600/40 uppercase tracking-wider">
+                    <span className="px-4 py-1.5 rounded-full text-xs font-bold bg-blue-600 text-white shadow-lg shadow-blue-600/40 uppercase tracking-wider">
                       Most Popular
                     </span>
                   </div>
@@ -181,8 +181,8 @@ export const PricingPage: React.FC<PricingPageProps> = ({ onNavigate }) => {
                     onClick={() => { onNavigate('/book-a-call'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
                     className={`w-full py-4 rounded-full font-bold text-sm transition-all flex items-center justify-center gap-2 ${
                       plan.popular
-                        ? 'bg-blue-600 text-black hover:bg-[#33F3FF] shadow-[0_0_20px_rgba(0,240,255,0.3)] hover:shadow-[0_0_30px_rgba(0,240,255,0.5)]'
-                        : 'bg-slate-100 text-slate-900 border border-slate-200 hover:border-white/30 hover:bg-slate-200'
+                        ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-[0_0_20px_rgba(0,240,255,0.3)] hover:shadow-[0_0_30px_rgba(0,240,255,0.5)]'
+                        : 'bg-slate-100 text-white border border-slate-200 hover:border-white/30 hover:bg-slate-200'
                     }`}
                   >
                     <span>{plan.price === 'Custom' ? 'Contact Us' : 'Get Started'}</span>
@@ -201,7 +201,7 @@ export const PricingPage: React.FC<PricingPageProps> = ({ onNavigate }) => {
               <div className="inline-flex items-center justify-center p-3 rounded-2xl bg-blue-600/10 text-blue-600 mb-4">
                 <HelpCircle className="w-6 h-6" />
               </div>
-              <h3 className="text-3xl font-extrabold text-slate-900">Frequently Asked Questions</h3>
+              <h3 className="text-3xl font-extrabold text-[#0A1628]">Frequently Asked Questions</h3>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
@@ -224,7 +224,7 @@ export const PricingPage: React.FC<PricingPageProps> = ({ onNavigate }) => {
                 },
               ].map(({ q, a }) => (
                 <div key={q} className="space-y-3 p-6 rounded-2xl bg-slate-100 border border-slate-200 hover:border-slate-200 transition-colors shadow-inner">
-                  <h4 className="text-base font-bold text-slate-900 flex items-start gap-2">
+                  <h4 className="text-base font-bold text-[#0A1628] flex items-start gap-2">
                     <span className="text-blue-600 mt-1">•</span>
                     {q}
                   </h4>
@@ -248,7 +248,7 @@ export const PricingPage: React.FC<PricingPageProps> = ({ onNavigate }) => {
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
         >
           <motion.div variants={itemVariants} className="text-center mb-12">
-            <h3 className="text-3xl font-extrabold text-slate-900">What Our Clients Say</h3>
+            <h3 className="text-3xl font-extrabold text-[#0A1628]">What Our Clients Say</h3>
             <p className="text-slate-500 text-base mt-4 max-w-2xl mx-auto">Don't just take our word for it. Hear from the leaders who have transformed their digital presence with BawarSol.</p>
           </motion.div>
           

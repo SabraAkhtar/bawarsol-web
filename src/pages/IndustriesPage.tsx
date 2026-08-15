@@ -57,9 +57,9 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate }) =>
             <span>Industry Specific AI Engineering</span>
           </motion.div>
 
-          <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-slate-900 tracking-tight">
+          <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-[#0A1628] tracking-tight">
             AI Solutions Across <br />
-            <span className="font-serif italic font-normal text-blue-600 accent-glow">
+            <span className="font-serif italic font-normal text-blue-600">
               High-Impact Industries
             </span>
           </motion.h1>
@@ -101,7 +101,7 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate }) =>
                   </div>
 
                   <div>
-                    <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 group-hover:text-blue-600 transition-colors">
+                    <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0A1628] group-hover:text-blue-600 transition-colors">
                       {ind.name}
                     </h2>
                     <p className="text-blue-600 text-sm font-semibold mt-2 tracking-wide">

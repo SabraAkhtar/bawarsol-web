@@ -21,9 +21,9 @@ export const GlobalCTA: React.FC<GlobalCTAProps> = ({ onNavigate }) => {
                 <span>Next-Gen AI Engineering</span>
               </div>
 
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0A1628] tracking-tight leading-tight">
                 Have an AI idea? <br />
-                <span className="font-serif italic font-normal text-blue-600 accent-glow">
+                <span className="font-serif italic font-normal text-blue-600">
                   Let's turn it into reality.
                 </span>
               </h2>
@@ -39,9 +39,9 @@ export const GlobalCTA: React.FC<GlobalCTAProps> = ({ onNavigate }) => {
                   onNavigate('/book-a-call');
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-bold text-base text-black bg-blue-600 hover:bg-[#33F3FF] transition-all duration-300 shadow-xl shadow-blue-600/25 hover:shadow-blue-600/40 hover:scale-105"
+                className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-bold text-base text-white bg-blue-600 hover:bg-blue-700 transition-all duration-300 shadow-xl shadow-blue-600/25 hover:shadow-blue-600/40 hover:scale-105"
               >
-                <Sparkles className="w-5 h-5 text-black" />
+                <Sparkles className="w-5 h-5 text-white" />
                 <span>Book a Call</span>
                 <ArrowRight className="w-5 h-5" />
               </button>

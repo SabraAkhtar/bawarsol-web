@@ -66,9 +66,9 @@ export const CareerPage: React.FC<CareerPageProps> = ({ onNavigate, onApplyJob }
             <span>Engineering Talent & Careers</span>
           </motion.div>
 
-          <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-slate-900 tracking-tight">
+          <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-[#0A1628] tracking-tight">
             Build the Future <br />
-            <span className="font-serif italic font-normal text-blue-600 accent-glow">
+            <span className="font-serif italic font-normal text-blue-600">
               With BawarSol
             </span>
           </motion.h1>
@@ -85,8 +85,8 @@ export const CareerPage: React.FC<CareerPageProps> = ({ onNavigate, onApplyJob }
                 onClick={() => setSelectedDept(dept)}
                 className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all ${
                   selectedDept === dept
-                    ? 'bg-blue-600 text-black shadow-[0_0_20px_rgba(0,240,255,0.3)] scale-105'
-                    : 'bg-slate-50 border border-slate-200 text-slate-500 hover:text-slate-900 border border-slate-200 hover:border-white/30'
+                    ? 'bg-blue-600 text-white shadow-[0_0_20px_rgba(0,240,255,0.3)] scale-105'
+                    : 'bg-slate-50 border border-slate-200 text-slate-500 hover:text-white border border-slate-200 hover:border-white/30'
                 }`}
               >
                 {dept}
@@ -107,7 +107,7 @@ export const CareerPage: React.FC<CareerPageProps> = ({ onNavigate, onApplyJob }
             viewport={{ once: true }}
             className="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-slate-200 pb-6"
           >
-            <h2 className="text-3xl font-extrabold text-slate-900">Open Engineering Roles</h2>
+            <h2 className="text-3xl font-extrabold text-[#0A1628]">Open Engineering Roles</h2>
             <span className="px-4 py-2 rounded-full bg-blue-600/10 border border-blue-600/20 text-sm text-blue-600 font-bold shadow-sm">
               {filteredJobs.length} active positions in database
             </span>
@@ -146,7 +146,7 @@ export const CareerPage: React.FC<CareerPageProps> = ({ onNavigate, onApplyJob }
                           <span className="text-xs font-bold text-blue-600 uppercase tracking-wider block mb-2">
                             {job.department}
                           </span>
-                          <h3 className="text-2xl font-extrabold text-slate-900 group-hover:text-blue-600 transition-colors leading-tight">
+                          <h3 className="text-2xl font-extrabold text-[#0A1628] group-hover:text-blue-600 transition-colors leading-tight">
                             {job.title}
                           </h3>
                         </div>
@@ -189,7 +189,7 @@ export const CareerPage: React.FC<CareerPageProps> = ({ onNavigate, onApplyJob }
                       <span className="text-sm font-bold text-slate-500">Competitive Salary + Equity</span>
                       <button
                         onClick={() => onApplyJob(job.slug)}
-                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-sm font-bold text-black bg-blue-600 hover:bg-[#33F3FF] transition-all shadow-[0_0_20px_rgba(0,240,255,0.2)] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)]"
+                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 transition-all shadow-[0_0_20px_rgba(0,240,255,0.2)] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)]"
                       >
                         <span>Apply Now</span>
                         <ArrowRight className="w-4 h-4" />

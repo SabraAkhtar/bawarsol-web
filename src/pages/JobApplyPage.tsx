@@ -184,7 +184,7 @@ export const JobApplyPage: React.FC<JobApplyPageProps> = ({ jobSlug, onNavigate 
               <span className="text-xs font-bold text-blue-600 uppercase tracking-wider block mb-2">
                 Application for:
               </span>
-              <h1 className="text-4xl font-extrabold text-slate-900 tracking-tight">{job?.title || jobSlug}</h1>
+              <h1 className="text-4xl font-extrabold text-[#0A1628] tracking-tight">{job?.title || jobSlug}</h1>
               <div className="flex flex-wrap gap-4 text-xs text-slate-500 font-medium pt-3">
                 <span className="bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200">Department: {job?.department}</span>
                 <span className="bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200">Location: {job?.location}</span>
@@ -211,14 +211,14 @@ export const JobApplyPage: React.FC<JobApplyPageProps> = ({ jobSlug, onNavigate 
                     >
                       <CheckCircle2 className="w-10 h-10" />
                     </motion.div>
-                    <h2 className="text-3xl font-extrabold text-slate-900">Application Received 🎉</h2>
+                    <h2 className="text-3xl font-extrabold text-[#0A1628]">Application Received 🎉</h2>
                     <p className="text-slate-600 text-sm max-w-md mx-auto leading-relaxed">
                       Thank you for applying for the <span className="text-blue-600 font-bold">{job?.title}</span> position at BawarSol. Our engineering talent team will review your application and respond shortly.
                     </p>
                     <div className="pt-4">
                         <button
                           onClick={() => onNavigate('/career')}
-                          className="px-8 py-3.5 rounded-full bg-blue-600 text-black font-bold text-sm hover:bg-[#33F3FF] transition-all shadow-[0_0_20px_rgba(0,240,255,0.2)] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)]"
+                          className="px-8 py-3.5 rounded-full bg-blue-600 text-white font-bold text-sm hover:bg-blue-700 transition-all shadow-[0_0_20px_rgba(0,240,255,0.2)] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)]"
                         >
                           Return to Careers
                         </button>
@@ -236,7 +236,7 @@ export const JobApplyPage: React.FC<JobApplyPageProps> = ({ jobSlug, onNavigate 
                >
                  <div className="absolute inset-0 bg-gradient-to-br from-slate-900/[0.01] to-transparent pointer-events-none" />
                 <div className="relative z-10 space-y-8">
-                    <motion.h2 variants={itemVariants} className="text-2xl font-extrabold text-slate-900 border-b border-slate-200 pb-4">
+                    <motion.h2 variants={itemVariants} className="text-2xl font-extrabold text-[#0A1628] border-b border-slate-200 pb-4">
                       Applicant Profile & Details
                     </motion.h2>
         
@@ -395,7 +395,7 @@ export const JobApplyPage: React.FC<JobApplyPageProps> = ({ jobSlug, onNavigate 
                         <button
                           type="submit"
                           disabled={submitting}
-                          className="w-full py-4.5 rounded-full font-bold text-base text-black bg-blue-600 hover:bg-[#33F3FF] transition-all shadow-[0_0_20px_rgba(0,240,255,0.25)] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)] flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
+                          className="w-full py-4.5 rounded-full font-bold text-base text-white bg-blue-600 hover:bg-blue-700 transition-all shadow-[0_0_20px_rgba(0,240,255,0.25)] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)] flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
                         >
                           {submitting ? (
                             <span>Submitting Application...</span>

@@ -57,7 +57,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   hidden: { opacity: 0, y: 15 },
                   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } }
                 }}
-                className="text-[11px] font-bold text-slate-500 uppercase tracking-[0.25em] flex items-center gap-4"
+                className="text-[11px] font-bold text-slate-400 uppercase tracking-[0.25em] flex items-center gap-4"
               >
                 <span className="w-8 h-[1px] bg-gradient-to-r from-blue-600/50 to-transparent" />
                 Enterprise AI Systems
@@ -69,10 +69,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   hidden: { opacity: 0, y: 20 },
                   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
                 }}
-                className="text-5xl sm:text-6xl lg:text-[76px] font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.05]"
+                className="text-5xl sm:text-6xl lg:text-[76px] font-extrabold tracking-[-0.03em] text-[#0A1628] leading-[1.05]"
               >
                 Engineering <br />
-                <span className="bg-clip-text text-transparent bg-gradient-to-br from-slate-900 via-white to-slate-500">
+                <span className="bg-clip-text text-transparent bg-gradient-to-br from-blue-700 via-blue-500 to-indigo-600">
                   Intelligent Solutions.
                 </span>
               </motion.h1>
@@ -165,11 +165,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-2xl mb-20"
           >
-            <p className="text-[11px] font-bold text-slate-500 uppercase tracking-[0.25em] flex items-center gap-4 mb-5">
+            <p className="text-[11px] font-bold text-slate-400 uppercase tracking-[0.25em] flex items-center gap-4 mb-5">
               <span className="w-8 h-[1px] bg-gradient-to-r from-blue-600/50 to-transparent" />
               Core Engineering Capabilities
             </p>
-            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.1] mb-5">
+            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-[-0.03em] text-[#0A1628] leading-[1.1] mb-5">
               Built for Enterprise Scale.
             </h2>
             <p className="text-slate-500 text-base leading-relaxed">
@@ -196,7 +196,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200 border border-white/[0.08] flex items-center justify-center mb-5 group-hover:border-blue-600/30 transition-all duration-300">
                     {serviceIconMap[service.iconName] || <Bot className="w-5 h-5 text-blue-600" />}
                   </div>
-                  <h4 className="text-base font-bold text-slate-900 mb-2.5 group-hover:text-slate-900/90 transition-colors leading-snug">
+                  <h4 className="text-base font-bold text-[#0A1628] mb-2.5 group-hover:text-slate-900/90 transition-colors leading-snug">
                     {service.title}
                   </h4>
                   <p className="text-slate-500 text-xs leading-relaxed line-clamp-3">
@@ -246,11 +246,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6"
           >
             <div>
-              <p className="text-[11px] font-bold text-slate-500 uppercase tracking-[0.25em] flex items-center gap-4 mb-5">
+              <p className="text-[11px] font-bold text-slate-400 uppercase tracking-[0.25em] flex items-center gap-4 mb-5">
                 <span className="w-8 h-[1px] bg-gradient-to-r from-blue-600/50 to-transparent" />
                 Industry Impact
               </p>
-              <h2 className="text-4xl sm:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.1]">
+              <h2 className="text-4xl sm:text-5xl font-extrabold tracking-[-0.03em] text-[#0A1628] leading-[1.1]">
                 AI for Specialized Sectors.
               </h2>
             </div>
@@ -281,7 +281,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   <p className="text-[10px] font-bold text-blue-600/70 uppercase tracking-[0.2em] mb-3">
                     {ind.name}
                   </p>
-                  <h3 className="text-base font-bold text-slate-900 mb-3 leading-snug group-hover:text-slate-900/90 transition-colors">
+                  <h3 className="text-base font-bold text-[#0A1628] mb-3 leading-snug group-hover:text-slate-900/90 transition-colors">
                     {ind.tagline}
                   </h3>
                   <p className="text-slate-500 text-xs leading-relaxed mb-5 line-clamp-3">
@@ -310,11 +310,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-2xl mb-20"
           >
-            <p className="text-[11px] font-bold text-slate-500 uppercase tracking-[0.25em] flex items-center gap-4 mb-5">
+            <p className="text-[11px] font-bold text-slate-400 uppercase tracking-[0.25em] flex items-center gap-4 mb-5">
               <span className="w-8 h-[1px] bg-gradient-to-r from-blue-600/50 to-transparent" />
               Case Studies & Systems
             </p>
-            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-[-0.03em] text-slate-900 leading-[1.1] mb-5">
+            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-[-0.03em] text-[#0A1628] leading-[1.1] mb-5">
               Featured Engineering Work.
             </h2>
             <p className="text-slate-500 text-base leading-relaxed">
@@ -351,7 +351,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
                 {/* Content */}
                 <div className="p-6 space-y-3">
-                  <h3 className="text-base font-bold text-slate-900 leading-snug group-hover:text-slate-900/90 transition-colors">
+                  <h3 className="text-base font-bold text-[#0A1628] leading-snug group-hover:text-slate-900/90 transition-colors">
                     {proj.title}
                   </h3>
                   <p className="text-slate-500 text-xs leading-relaxed line-clamp-2">

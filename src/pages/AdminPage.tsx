@@ -259,7 +259,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
             <div className="w-12 h-12 rounded-2xl bg-blue-600/10 border border-blue-600/30 text-blue-600 flex items-center justify-center mx-auto">
               <Shield className="w-6 h-6 text-blue-600" />
             </div>
-            <h1 className="text-2xl font-extrabold text-slate-900">BawarSol Admin Portal</h1>
+            <h1 className="text-2xl font-extrabold text-[#0A1628]">BawarSol Admin Portal</h1>
             <p className="text-xs text-slate-500">Enter secure admin credentials to access system dashboard</p>
           </div>
 
@@ -296,7 +296,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
             <button
               type="submit"
               disabled={authenticating}
-              className="w-full py-3.5 rounded-xl font-bold text-sm text-black bg-blue-600 hover:bg-[#33F3FF] transition-all shadow-lg shadow-blue-600/20"
+              className="w-full py-3.5 rounded-xl font-bold text-sm text-white bg-blue-600 hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20"
             >
               {authenticating ? 'Authenticating...' : 'Sign In to Dashboard'}
             </button>
@@ -318,7 +318,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
           <div className="flex items-center gap-3">
             <Shield className="w-6 h-6 text-blue-600" />
             <div>
-              <h1 className="text-lg font-bold text-slate-900 leading-none">BawarSol Management Console</h1>
+              <h1 className="text-lg font-bold text-[#0A1628] leading-none">BawarSol Management Console</h1>
               <span className="text-[11px] text-blue-600 font-mono">Authenticated Admin Session</span>
             </div>
           </div>
@@ -358,8 +358,8 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
               onClick={() => setActiveTab(tab.id as any)}
               className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
                 activeTab === tab.id
-                  ? 'bg-blue-600 text-black shadow-md shadow-blue-600/20 font-bold'
-                  : 'bg-slate-50 border border-slate-200 text-slate-500 hover:text-slate-900 hover:bg-white/[0.08] border border-slate-200'
+                  ? 'bg-blue-600 text-white shadow-md shadow-blue-600/20 font-bold'
+                  : 'bg-slate-50 border border-slate-200 text-slate-500 hover:text-white hover:bg-white/[0.08] border border-slate-200'
               }`}
             >
               {tab.icon}
@@ -374,25 +374,25 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="p-6 rounded-2xl bg-white shadow-sm border border-slate-200 backdrop-blur-xl border border-slate-200 space-y-2">
                 <span className="text-xs text-slate-500">Total Bookings</span>
-                <div className="text-3xl font-extrabold text-slate-900">{stats.totalBookings}</div>
+                <div className="text-3xl font-extrabold text-[#0A1628]">{stats.totalBookings}</div>
                 <span className="text-xs text-blue-600 font-mono">{stats.upcomingCalls} upcoming</span>
               </div>
 
               <div className="p-6 rounded-2xl bg-white shadow-sm border border-slate-200 backdrop-blur-xl border border-slate-200 space-y-2">
                 <span className="text-xs text-slate-500">Contact Inquiries</span>
-                <div className="text-3xl font-extrabold text-slate-900">{stats.totalInquiries}</div>
+                <div className="text-3xl font-extrabold text-[#0A1628]">{stats.totalInquiries}</div>
                 <span className="text-xs text-blue-600 font-mono">{stats.unreadInquiries} unread</span>
               </div>
 
               <div className="p-6 rounded-2xl bg-white shadow-sm border border-slate-200 backdrop-blur-xl border border-slate-200 space-y-2">
                 <span className="text-xs text-slate-500">Job Applications</span>
-                <div className="text-3xl font-extrabold text-slate-900">{stats.totalApplications}</div>
+                <div className="text-3xl font-extrabold text-[#0A1628]">{stats.totalApplications}</div>
                 <span className="text-xs text-amber-400 font-mono">{stats.newApplications} new candidates</span>
               </div>
 
               <div className="p-6 rounded-2xl bg-white shadow-sm border border-slate-200 backdrop-blur-xl border border-slate-200 space-y-2">
                 <span className="text-xs text-slate-500">Published Content</span>
-                <div className="text-3xl font-extrabold text-slate-900">{stats.publishedBlogs}</div>
+                <div className="text-3xl font-extrabold text-[#0A1628]">{stats.publishedBlogs}</div>
                 <span className="text-xs text-blue-600 font-mono">{stats.activeJobs} active job posts</span>
               </div>
             </div>
@@ -400,7 +400,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Upcoming Bookings */}
               <div className="p-6 rounded-3xl bg-white shadow-sm border border-slate-200 backdrop-blur-xl border border-slate-200 space-y-4">
-                <h3 className="text-lg font-bold text-slate-900 flex items-center justify-between">
+                <h3 className="text-lg font-bold text-[#0A1628] flex items-center justify-between">
                   <span>Recent Call Bookings</span>
                   <button onClick={() => setActiveTab('bookings')} className="text-xs text-blue-600">View All</button>
                 </h3>
@@ -421,7 +421,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
 
               {/* Recent Inquiries */}
               <div className="p-6 rounded-3xl bg-white shadow-sm border border-slate-200 backdrop-blur-xl border border-slate-200 space-y-4">
-                <h3 className="text-lg font-bold text-slate-900 flex items-center justify-between">
+                <h3 className="text-lg font-bold text-[#0A1628] flex items-center justify-between">
                   <span>Recent Inquiries</span>
                   <button onClick={() => setActiveTab('inquiries')} className="text-xs text-blue-600">View All</button>
                 </h3>
@@ -446,7 +446,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
         {/* TAB 2: BOOKINGS MANAGEMENT */}
         {activeTab === 'bookings' && (
           <div className="space-y-6">
-            <h2 className="text-xl font-bold text-slate-900">Call Bookings Management</h2>
+            <h2 className="text-xl font-bold text-[#0A1628]">Call Bookings Management</h2>
             <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm border border-slate-200 backdrop-blur-xl">
               <table className="w-full text-left text-xs">
                 <thead className="bg-white/90 text-slate-500 font-mono border-b border-slate-200">
@@ -509,7 +509,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
         {/* TAB 3: BOOKING SETTINGS */}
         {activeTab === 'settings' && settings && (
           <form onSubmit={handleSaveSettings} className="p-8 rounded-3xl bg-white shadow-sm border border-slate-200 backdrop-blur-xl border border-slate-200 space-y-6 max-w-2xl">
-            <h2 className="text-xl font-bold text-slate-900 border-b border-slate-200 pb-3">Booking Engine Configuration</h2>
+            <h2 className="text-xl font-bold text-[#0A1628] border-b border-slate-200 pb-3">Booking Engine Configuration</h2>
 
             <div className="grid grid-cols-2 gap-4">
               <div>
@@ -567,7 +567,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
 
             <button
               type="submit"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 text-black font-bold text-xs hover:bg-[#33F3FF] transition-colors shadow-md shadow-blue-600/20"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 text-white font-bold text-xs hover:bg-blue-700 transition-colors shadow-md shadow-blue-600/20"
             >
               <Save className="w-4 h-4" />
               <span>Save Configuration</span>
@@ -578,7 +578,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
         {/* TAB 4: INQUIRIES */}
         {activeTab === 'inquiries' && (
           <div className="space-y-6">
-            <h2 className="text-xl font-bold text-slate-900">Contact Form Inquiries</h2>
+            <h2 className="text-xl font-bold text-[#0A1628]">Contact Form Inquiries</h2>
             <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm border border-slate-200 backdrop-blur-xl">
               <table className="w-full text-left text-xs">
                 <thead className="bg-white/90 text-slate-500 font-mono border-b border-slate-200">
@@ -627,10 +627,10 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
         {activeTab === 'blogs' && (
           <div className="space-y-6">
             <div className="flex items-center justify-between">
-              <h2 className="text-xl font-bold text-slate-900">Blogs Management</h2>
+              <h2 className="text-xl font-bold text-[#0A1628]">Blogs Management</h2>
               <button
                 onClick={() => setNewBlogModal(true)}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-black hover:bg-[#33F3FF]"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white hover:bg-blue-700"
               >
                 <Plus className="w-4 h-4" />
                 <span>Create New Blog Post</span>
@@ -649,7 +649,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
                       <Trash2 className="w-4 h-4" />
                     </button>
                   </div>
-                  <h3 className="font-bold text-slate-900 text-base">{b.title}</h3>
+                  <h3 className="font-bold text-[#0A1628] text-base">{b.title}</h3>
                   <p className="text-xs text-slate-500 line-clamp-2">{b.excerpt}</p>
                 </div>
               ))}
@@ -659,7 +659,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
             {newBlogModal && (
               <div className="fixed inset-0 z-50 bg-white/90 backdrop-blur-sm flex items-center justify-center p-4">
                 <form onSubmit={handleCreateBlog} className="bg-slate-50 border border-slate-200 p-8 rounded-3xl max-w-lg w-full space-y-4 max-h-[90vh] overflow-y-auto">
-                  <h3 className="text-lg font-bold text-slate-900">Create New Blog Post</h3>
+                  <h3 className="text-lg font-bold text-[#0A1628]">Create New Blog Post</h3>
                   <div>
                     <label className="text-xs text-slate-600 block mb-1">Title</label>
                     <input
@@ -699,7 +699,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
                   </div>
                   <div className="flex justify-end gap-3 pt-2">
                     <button type="button" onClick={() => setNewBlogModal(false)} className="px-4 py-2 text-xs text-slate-500">Cancel</button>
-                    <button type="submit" className="px-5 py-2 text-xs font-bold bg-blue-600 text-black rounded-xl">Publish Post</button>
+                    <button type="submit" className="px-5 py-2 text-xs font-bold bg-blue-600 text-white rounded-xl">Publish Post</button>
                   </div>
                 </form>
               </div>
@@ -711,10 +711,10 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
         {activeTab === 'jobs' && (
           <div className="space-y-6">
             <div className="flex items-center justify-between">
-              <h2 className="text-xl font-bold text-slate-900">Careers & Job Openings Management</h2>
+              <h2 className="text-xl font-bold text-[#0A1628]">Careers & Job Openings Management</h2>
               <button
                 onClick={() => setNewJobModal(true)}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-black hover:bg-[#33F3FF]"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white hover:bg-blue-700"
               >
                 <Plus className="w-4 h-4" />
                 <span>Create Job Position</span>
@@ -730,7 +730,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
                       <Trash2 className="w-4 h-4" />
                     </button>
                   </div>
-                  <h3 className="font-bold text-slate-900 text-base">{j.title}</h3>
+                  <h3 className="font-bold text-[#0A1628] text-base">{j.title}</h3>
                   <p className="text-xs text-slate-500">{j.location} • {j.employmentType}</p>
                 </div>
               ))}
@@ -740,7 +740,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
             {newJobModal && (
               <div className="fixed inset-0 z-50 bg-white/90 backdrop-blur-sm flex items-center justify-center p-4">
                 <form onSubmit={handleCreateJob} className="bg-slate-50 border border-slate-200 p-8 rounded-3xl max-w-lg w-full space-y-4 max-h-[90vh] overflow-y-auto">
-                  <h3 className="text-lg font-bold text-slate-900">Create Open Position</h3>
+                  <h3 className="text-lg font-bold text-[#0A1628]">Create Open Position</h3>
                   <div>
                     <label className="text-xs text-slate-600 block mb-1">Job Title</label>
                     <input
@@ -771,7 +771,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
                   </div>
                   <div className="flex justify-end gap-3 pt-2">
                     <button type="button" onClick={() => setNewJobModal(false)} className="px-4 py-2 text-xs text-slate-500">Cancel</button>
-                    <button type="submit" className="px-5 py-2 text-xs font-bold bg-blue-600 text-black rounded-xl">Create Position</button>
+                    <button type="submit" className="px-5 py-2 text-xs font-bold bg-blue-600 text-white rounded-xl">Create Position</button>
                   </div>
                 </form>
               </div>
@@ -782,7 +782,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
         {/* TAB 7: JOB APPLICATIONS */}
         {activeTab === 'applications' && (
           <div className="space-y-6">
-            <h2 className="text-xl font-bold text-slate-900">Job Applications Review</h2>
+            <h2 className="text-xl font-bold text-[#0A1628]">Job Applications Review</h2>
             <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm border border-slate-200 backdrop-blur-xl">
               <table className="w-full text-left text-xs">
                 <thead className="bg-white/90 text-slate-500 font-mono border-b border-slate-200">

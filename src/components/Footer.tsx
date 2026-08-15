@@ -68,7 +68,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
           {/* Services Column */}
           <div>
-            <h4 className="text-slate-900 font-semibold text-sm uppercase tracking-wider mb-4 border-b border-slate-200 pb-2">
+            <h4 className="text-[#0A1628] font-semibold text-sm uppercase tracking-wider mb-4 border-b border-slate-200 pb-2">
               Services
             </h4>
             <ul className="space-y-2.5 text-sm">
@@ -94,7 +94,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
           {/* Company Column */}
           <div>
-            <h4 className="text-slate-900 font-semibold text-sm uppercase tracking-wider mb-4 border-b border-slate-200 pb-2">
+            <h4 className="text-[#0A1628] font-semibold text-sm uppercase tracking-wider mb-4 border-b border-slate-200 pb-2">
               Company
             </h4>
             <ul className="space-y-2.5 text-sm">
@@ -121,7 +121,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
           {/* Get Started Column */}
           <div>
-            <h4 className="text-slate-900 font-semibold text-sm uppercase tracking-wider mb-4 border-b border-slate-200 pb-2">
+            <h4 className="text-[#0A1628] font-semibold text-sm uppercase tracking-wider mb-4 border-b border-slate-200 pb-2">
               Get Started
             </h4>
             <p className="text-xs text-slate-500 mb-4 leading-relaxed">
@@ -130,7 +130,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <div className="space-y-3">
               <button
                 onClick={() => handleNav('/book-a-call')}
-                className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs text-black bg-blue-600 hover:bg-[#33F3FF] transition-all shadow-md shadow-blue-600/20"
+                className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs text-white bg-blue-600 hover:bg-blue-700 transition-all shadow-md shadow-blue-600/20"
               >
                 <span>Book a Call</span>
                 <ArrowRight className="w-3.5 h-3.5" />

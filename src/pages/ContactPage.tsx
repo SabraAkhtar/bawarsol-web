@@ -104,9 +104,9 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
             <span>Direct Client Engagement</span>
           </motion.div>
 
-          <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-slate-900 tracking-tight">
+          <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-[#0A1628] tracking-tight">
             Let's Build Something <br />
-            <span className="font-serif italic font-normal text-blue-600 accent-glow">
+            <span className="font-serif italic font-normal text-blue-600">
               Extraordinary
             </span>
           </motion.h1>
@@ -133,7 +133,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
             <motion.div variants={itemVariants} className="lg:col-span-5 space-y-8">
               <div className="p-8 sm:p-10 rounded-[2rem] bg-white shadow-sm backdrop-blur-2xl border border-slate-200 shadow-2xl space-y-8">
                 <div>
-                  <h2 className="text-3xl font-extrabold text-slate-900 mb-4">Engineering Support & Inquiries</h2>
+                  <h2 className="text-3xl font-extrabold text-[#0A1628] mb-4">Engineering Support & Inquiries</h2>
                   <p className="text-slate-600 text-base leading-relaxed">
                     We collaborate with CTOs, founders, and innovation teams to deploy robust digital solutions.
                   </p>
@@ -174,7 +174,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                 <div className="pt-8 border-t border-slate-200">
                   <button
                     onClick={() => { onNavigate('/book-a-call'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                    className="w-full flex items-center justify-center gap-2 py-4 rounded-full font-bold text-sm text-black bg-blue-600 hover:bg-[#33F3FF] transition-all shadow-[0_0_20px_rgba(0,240,255,0.2)] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)]"
+                    className="w-full flex items-center justify-center gap-2 py-4 rounded-full font-bold text-sm text-white bg-blue-600 hover:bg-blue-700 transition-all shadow-[0_0_20px_rgba(0,240,255,0.2)] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)]"
                   >
                     <Sparkles className="w-4 h-4 text-black" />
                     <span>Book a Direct Video Call</span>
@@ -195,7 +195,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                   >
                     <CheckCircle2 className="w-12 h-12" />
                   </motion.div>
-                  <h2 className="text-3xl font-extrabold text-slate-900">Inquiry Received!</h2>
+                  <h2 className="text-3xl font-extrabold text-[#0A1628]">Inquiry Received!</h2>
                   <p className="text-slate-600 text-base max-w-md mx-auto leading-relaxed">
                     Thank you for contacting BawarSol. An expert has been assigned to your message and will get back to you within 24 hours.
                   </p>
@@ -211,7 +211,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-600/[0.02] to-transparent rounded-[2rem] pointer-events-none" />
                   
                   <div className="relative z-10">
-                    <h2 className="text-2xl font-extrabold text-slate-900 border-b border-slate-200 pb-6 mb-8">
+                    <h2 className="text-2xl font-extrabold text-[#0A1628] border-b border-slate-200 pb-6 mb-8">
                       Project Contact Form
                     </h2>
 
@@ -337,7 +337,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                       <button
                         type="submit"
                         disabled={submitting}
-                        className="w-full py-4.5 rounded-full font-bold text-base text-black bg-blue-600 hover:bg-[#33F3FF] transition-all shadow-[0_0_20px_rgba(0,240,255,0.25)] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)] flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
+                        className="w-full py-4.5 rounded-full font-bold text-base text-white bg-blue-600 hover:bg-blue-700 transition-all shadow-[0_0_20px_rgba(0,240,255,0.25)] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)] flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
                       >
                         {submitting ? (
                           <span>Sending Message...</span>

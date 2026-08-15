@@ -59,7 +59,7 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ slug, onNavigate
   if (!blog) {
     return (
       <div className="min-h-screen bg-slate-50 text-slate-900 pt-32 text-center space-y-6">
-        <h2 className="text-3xl font-extrabold text-slate-900">Publication Not Found</h2>
+        <h2 className="text-3xl font-extrabold text-[#0A1628]">Publication Not Found</h2>
         <button
           onClick={() => onNavigate('/blogs')}
           className="inline-flex items-center gap-2 px-6 py-3 bg-slate-50 border border-slate-200 text-blue-600 rounded-full text-sm border border-slate-200 hover:bg-slate-200 transition-colors"
@@ -98,7 +98,7 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ slug, onNavigate
             <span>{blog.category}</span>
           </motion.div>
 
-          <motion.h1 variants={itemVariants} className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+          <motion.h1 variants={itemVariants} className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0A1628] tracking-tight leading-tight">
             {blog.title}
           </motion.h1>
 
@@ -132,7 +132,7 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ slug, onNavigate
                 className={`inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg border text-sm font-bold transition-all ${
                   copied
                     ? 'bg-blue-600/20 border-blue-600/50 text-blue-600'
-                    : 'bg-slate-100 border-slate-200 text-slate-600 hover:text-slate-900 hover:border-white/30'
+                    : 'bg-slate-100 border-slate-200 text-slate-600 hover:text-white hover:border-white/30'
                 }`}
               >
                 {copied ? <Check className="w-3.5 h-3.5" /> : <Share2 className="w-3.5 h-3.5" />}
@@ -180,7 +180,7 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ slug, onNavigate
 
             if (trimmed.startsWith('# ')) {
               return (
-                <h2 key={idx} className="text-3xl font-extrabold text-slate-900 pt-6 pb-2 border-b border-slate-200">
+                <h2 key={idx} className="text-3xl font-extrabold text-[#0A1628] pt-6 pb-2 border-b border-slate-200">
                   {trimmed.replace(/^# /, '')}
                 </h2>
               );
@@ -194,7 +194,7 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ slug, onNavigate
             }
             if (trimmed.startsWith('### ')) {
               return (
-                <h4 key={idx} className="text-xl font-bold text-slate-900 pt-4">
+                <h4 key={idx} className="text-xl font-bold text-[#0A1628] pt-4">
                   {trimmed.replace(/^### /, '')}
                 </h4>
               );
@@ -239,7 +239,7 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ slug, onNavigate
           viewport={{ once: true }}
           className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-slate-200 mt-12 relative z-10"
         >
-          <h3 className="text-3xl font-extrabold text-slate-900 mb-10">Related Engineering Publications</h3>
+          <h3 className="text-3xl font-extrabold text-[#0A1628] mb-10">Related Engineering Publications</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {related.map((rel) => (
               <motion.div
@@ -251,7 +251,7 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ slug, onNavigate
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-600/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
                 <div className="relative z-10 space-y-4">
                   <div className="text-xs font-bold text-blue-600 uppercase tracking-wider">{rel.category}</div>
-                  <h4 className="text-sm font-extrabold text-slate-900 group-hover:text-blue-600 line-clamp-2 leading-tight transition-colors">
+                  <h4 className="text-sm font-extrabold text-[#0A1628] group-hover:text-blue-600 line-clamp-2 leading-tight transition-colors">
                     {rel.title}
                   </h4>
                   <p className="text-slate-500 text-xs line-clamp-2 leading-relaxed">{rel.excerpt}</p>

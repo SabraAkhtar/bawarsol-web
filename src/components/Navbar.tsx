@@ -89,9 +89,9 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate }) => {
 
           <button
             onClick={() => handleLinkClick('/book-a-call')}
-            className="relative group inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-bold text-black bg-blue-600 hover:bg-[#33F3FF] transition-all duration-300 shadow-lg shadow-blue-600/25 hover:shadow-blue-600/40 hover:-translate-y-0.5"
+            className="relative group inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-600/25 hover:shadow-blue-600/40 hover:-translate-y-0.5"
           >
-            <Sparkles className="w-4 h-4 text-black animate-pulse" />
+            <Sparkles className="w-4 h-4 text-white animate-pulse" />
             <span>Book a Call</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
@@ -101,7 +101,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate }) => {
         <div className="lg:hidden flex items-center gap-2">
           <button
             onClick={() => handleLinkClick('/book-a-call')}
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold text-black bg-blue-600 shadow-md shadow-blue-600/20"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold text-white bg-blue-600 shadow-md shadow-blue-600/20"
           >
             <span>Book Call</span>
             <ArrowRight className="w-3 h-3" />
@@ -130,7 +130,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate }) => {
                   className={`w-full text-left px-4 py-3 rounded-xl text-base font-medium transition-colors ${
                     isActive
                       ? 'bg-blue-600/10 text-blue-600 font-semibold border border-blue-600/20'
-                      : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
+                      : 'text-slate-600 hover:bg-slate-100 hover:text-blue-600'
                   }`}
                 >
                   {link.name}
@@ -142,9 +142,9 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate }) => {
           <div className="pt-2 border-t border-slate-200 flex flex-col gap-2">
             <button
               onClick={() => handleLinkClick('/book-a-call')}
-              className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-black bg-blue-600 shadow-lg shadow-blue-600/25"
+              className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-white bg-blue-600 shadow-lg shadow-blue-600/25"
             >
-              <Sparkles className="w-4 h-4 text-black" />
+              <Sparkles className="w-4 h-4 text-white" />
               <span>Book a Call</span>
               <ArrowRight className="w-4 h-4" />
             </button>

@@ -71,9 +71,9 @@ export const BlogsPage: React.FC<BlogsPageProps> = ({ onNavigate, onSelectBlog }
             <span>Engineering Publications &amp; Insights</span>
           </motion.div>
 
-          <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-slate-900 tracking-tight">
+          <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-[#0A1628] tracking-tight">
             AI Engineering <br />
-            <span className="font-serif italic font-normal text-blue-600 accent-glow">
+            <span className="font-serif italic font-normal text-blue-600">
               Technical Insights &amp; Research
             </span>
           </motion.h1>
@@ -103,8 +103,8 @@ export const BlogsPage: React.FC<BlogsPageProps> = ({ onNavigate, onSelectBlog }
                   onClick={() => setSelectedCategory(cat)}
                   className={`px-5 py-2 rounded-full text-sm font-bold transition-all ${
                     selectedCategory === cat
-                      ? 'bg-blue-600 text-black shadow-[0_0_15px_rgba(0,240,255,0.3)] scale-105'
-                      : 'bg-slate-50 border border-slate-200 text-slate-500 hover:text-slate-900 hover:bg-white/[0.08] border border-slate-200 hover:border-slate-300'
+                      ? 'bg-blue-600 text-white shadow-[0_0_15px_rgba(0,240,255,0.3)] scale-105'
+                      : 'bg-slate-50 border border-slate-200 text-slate-500 hover:text-white hover:bg-white/[0.08] border border-slate-200 hover:border-slate-300'
                   }`}
                 >
                   {cat}
@@ -139,7 +139,7 @@ export const BlogsPage: React.FC<BlogsPageProps> = ({ onNavigate, onSelectBlog }
                     <span>Featured Publication</span>
                   </div>
 
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 group-hover:text-blue-600 transition-colors leading-tight">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0A1628] group-hover:text-blue-600 transition-colors leading-tight">
                     {featuredBlog.title}
                   </h2>
 
@@ -207,10 +207,10 @@ export const BlogsPage: React.FC<BlogsPageProps> = ({ onNavigate, onSelectBlog }
                       <Sparkles className="w-3.5 h-3.5" />
                       Visionary Leader
                     </span>
-                    <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
+                    <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0A1628] tracking-tight">
                       Meet <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-500">Muhammad Idrees</span>
                     </h3>
-                    <p className="text-blue-600/80 font-medium tracking-wide">Founder & CEO of BawarSol</p>
+                    <p className="text-blue-600 font-medium tracking-wide">Founder & CEO of BawarSol</p>
                   </div>
                   
                   <div className="w-12 h-[2px] bg-gradient-to-r from-blue-600 to-transparent mx-auto md:mx-0" />
@@ -288,10 +288,10 @@ export const BlogsPage: React.FC<BlogsPageProps> = ({ onNavigate, onSelectBlog }
                       <Sparkles className="w-3.5 h-3.5" />
                       Operational Excellence
                     </span>
-                    <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
+                    <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0A1628] tracking-tight">
                       Meet <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-500">Sabra Akhtar</span>
                     </h3>
-                    <p className="text-blue-600/80 font-medium tracking-wide">Co-Founder & Admin Manager</p>
+                    <p className="text-blue-600 font-medium tracking-wide">Co-Founder & Admin Manager</p>
                   </div>
                   
                   <div className="w-12 h-[2px] bg-gradient-to-r from-blue-600 to-transparent mx-auto md:mx-0" />
@@ -358,7 +358,7 @@ export const BlogsPage: React.FC<BlogsPageProps> = ({ onNavigate, onSelectBlog }
                     </div>
 
                     <div className="p-7 space-y-4">
-                      <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-blue-600 transition-colors line-clamp-2 leading-tight">
+                      <h3 className="text-lg font-extrabold text-[#0A1628] group-hover:text-blue-600 transition-colors line-clamp-2 leading-tight">
                         {blog.title}
                       </h3>
                       <p className="text-slate-500 text-sm leading-relaxed line-clamp-3">

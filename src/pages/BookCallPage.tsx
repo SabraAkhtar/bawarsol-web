@@ -200,7 +200,7 @@ END:VCALENDAR`;
             <span>Interactive Scheduling Engine</span>
           </motion.div>
 
-          <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight">
+          <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0A1628] tracking-tight">
             Let's Talk About Your Project
           </motion.h1>
 
@@ -238,7 +238,7 @@ END:VCALENDAR`;
           {/* STEP 1: MEETING TYPE */}
           {step === 1 && (
             <motion.div key="step1" variants={stepVariants} initial="initial" animate="animate" exit="exit" className="space-y-8">
-              <h2 className="text-2xl font-bold text-slate-900 text-center">Step 1 — Select Meeting Type</h2>
+              <h2 className="text-2xl font-bold text-[#0A1628] text-center">Step 1 — Select Meeting Type</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {meetingTypes.map((type) => {
                   const isSelected = selectedMeetingType?.id === type.id;
@@ -264,15 +264,15 @@ END:VCALENDAR`;
                             {type.durationMinutes} min
                           </span>
                         </div>
-                        <h3 className={`text-xl font-extrabold transition-colors ${isSelected ? 'text-slate-900' : 'text-slate-200 group-hover:text-slate-900'}`}>{type.name}</h3>
+                        <h3 className={`text-xl font-extrabold transition-colors ${isSelected ? 'text-white' : 'text-slate-200 group-hover:text-slate-900'}`}>{type.name}</h3>
                         <p className="text-slate-500 text-sm leading-relaxed">{type.description}</p>
                       </div>
 
                       <button
                         className={`w-full mt-8 py-3.5 rounded-2xl text-sm font-bold transition-all relative z-10 ${
                           isSelected
-                            ? 'bg-blue-600 text-black shadow-lg shadow-blue-600/20'
-                            : 'bg-slate-100 text-slate-500 group-hover:text-slate-900 group-hover:bg-slate-100 border border-slate-200'
+                            ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/20'
+                            : 'bg-slate-100 text-slate-500 group-hover:text-white group-hover:bg-slate-100 border border-slate-200'
                         }`}
                       >
                         {isSelected ? 'Selected' : 'Select Option'}
@@ -286,7 +286,7 @@ END:VCALENDAR`;
                 <button
                   onClick={() => setStep(2)}
                   disabled={!selectedMeetingType}
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-base text-black bg-blue-600 hover:bg-[#33F3FF] transition-all shadow-[0_0_20px_rgba(0,240,255,0.2)] disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-[0_0_30px_rgba(0,240,255,0.4)]"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-base text-white bg-blue-600 hover:bg-blue-700 transition-all shadow-[0_0_20px_rgba(0,240,255,0.2)] disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-[0_0_30px_rgba(0,240,255,0.4)]"
                 >
                   <span>Continue to Date Selection</span>
                   <ArrowRight className="w-5 h-5" />
@@ -338,7 +338,7 @@ END:VCALENDAR`;
                 <button
                   onClick={() => setStep(3)}
                   disabled={!selectedDate}
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-base text-black bg-blue-600 hover:bg-[#33F3FF] transition-all shadow-[0_0_20px_rgba(0,240,255,0.2)] disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-[0_0_30px_rgba(0,240,255,0.4)]"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-base text-white bg-blue-600 hover:bg-blue-700 transition-all shadow-[0_0_20px_rgba(0,240,255,0.2)] disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-[0_0_30px_rgba(0,240,255,0.4)]"
                 >
                   <span>Continue to Time Slot</span>
                   <ArrowRight className="w-5 h-5" />
@@ -391,7 +391,7 @@ END:VCALENDAR`;
                           onClick={() => setSelectedSlot(slot)}
                           className={`py-3.5 px-4 rounded-xl text-sm font-mono font-bold transition-all border ${
                             isSelected
-                              ? 'bg-blue-600 text-black border-blue-600 shadow-[0_0_15px_rgba(0,240,255,0.4)] ring-2 ring-blue-600/50 ring-offset-2 ring-offset-[#050505]'
+                              ? 'bg-blue-600 text-white border-blue-600 shadow-[0_0_15px_rgba(0,240,255,0.4)] ring-2 ring-blue-600/50 ring-offset-2 ring-offset-[#050505]'
                               : 'bg-slate-100 text-slate-600 border-slate-200 hover:border-white/30 hover:bg-slate-100'
                           }`}
                         >
@@ -411,7 +411,7 @@ END:VCALENDAR`;
                 <button
                   onClick={() => setStep(4)}
                   disabled={!selectedSlot}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-bold text-base text-black bg-blue-600 hover:bg-[#33F3FF] transition-all shadow-[0_0_20px_rgba(0,240,255,0.2)] disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-[0_0_30px_rgba(0,240,255,0.4)]"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-bold text-base text-white bg-blue-600 hover:bg-blue-700 transition-all shadow-[0_0_20px_rgba(0,240,255,0.2)] disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-[0_0_30px_rgba(0,240,255,0.4)]"
                 >
                   <span>Continue to Details</span>
                   <ArrowRight className="w-5 h-5" />
@@ -441,7 +441,7 @@ END:VCALENDAR`;
                   </div>
                 </div>
 
-                <h2 className="text-2xl font-extrabold text-slate-900">Step 4 — Client Information</h2>
+                <h2 className="text-2xl font-extrabold text-[#0A1628]">Step 4 — Client Information</h2>
 
                 {errorMsg && (
                   <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="p-4 rounded-xl bg-rose-950/40 border border-rose-900/50 text-rose-300 text-sm flex items-center gap-3 backdrop-blur-sm">
@@ -594,7 +594,7 @@ END:VCALENDAR`;
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="w-full py-4.5 rounded-full font-bold text-base text-black bg-blue-600 hover:bg-[#33F3FF] transition-all shadow-[0_0_20px_rgba(0,240,255,0.25)] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)] flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="w-full py-4.5 rounded-full font-bold text-base text-white bg-blue-600 hover:bg-blue-700 transition-all shadow-[0_0_20px_rgba(0,240,255,0.25)] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)] flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
                   >
                     {submitting ? (
                       <span>Locking in Slot & Processing...</span>
@@ -625,7 +625,7 @@ END:VCALENDAR`;
                   <CheckCircle2 className="w-12 h-12" />
                 </motion.div>
 
-                <h2 className="text-4xl font-extrabold text-slate-900">Your Call Is Booked 🎉</h2>
+                <h2 className="text-4xl font-extrabold text-[#0A1628]">Your Call Is Booked 🎉</h2>
 
                 <div className="p-8 rounded-[1.5rem] bg-slate-100 border border-slate-200 max-w-lg mx-auto text-left space-y-4 font-mono text-sm shadow-inner mt-8">
                   <div className="flex justify-between border-b border-slate-200 pb-3">
@@ -665,7 +665,7 @@ END:VCALENDAR`;
 
                   <button
                     onClick={() => onNavigate('/')}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-sm font-bold text-black bg-blue-600 hover:bg-[#33F3FF] transition-all shadow-[0_0_20px_rgba(0,240,255,0.2)] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)]"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 transition-all shadow-[0_0_20px_rgba(0,240,255,0.2)] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)]"
                   >
                     <span>Return to Homepage</span>
                   </button>

@@ -68,9 +68,9 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
             <span>Engineering Capabilities</span>
           </motion.div>
 
-          <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-slate-900 tracking-tight">
+          <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-[#0A1628] tracking-tight">
             Solutions Built for <br />
-            <span className="font-serif italic font-normal text-blue-600 accent-glow">
+            <span className="font-serif italic font-normal text-blue-600">
               Real-World Impact
             </span>
           </motion.h1>
@@ -130,7 +130,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
                         <span className="text-xs font-bold text-blue-600 uppercase tracking-widest block mb-1">
                           Service 0{index + 1}
                         </span>
-                        <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 group-hover:text-blue-600 transition-colors">
+                        <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0A1628] group-hover:text-blue-600 transition-colors">
                           {service.title}
                         </h2>
                       </div>
@@ -162,7 +162,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
                     <div className="pt-6">
                       <button
                         onClick={() => handleDiscussProject(service.title)}
-                        className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-sm text-black bg-blue-600 hover:bg-[#33F3FF] transition-all shadow-[0_0_20px_rgba(0,240,255,0.3)] hover:shadow-[0_0_30px_rgba(0,240,255,0.5)]"
+                        className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-sm text-white bg-blue-600 hover:bg-blue-700 transition-all shadow-[0_0_20px_rgba(0,240,255,0.3)] hover:shadow-[0_0_30px_rgba(0,240,255,0.5)]"
                       >
                         <span>Discuss Your Project</span>
                         <ArrowRight className="w-4 h-4" />
@@ -174,7 +174,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
                   <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-8 bg-slate-50/50 backdrop-blur-md p-8 rounded-3xl border border-slate-200 shadow-inner">
                     {/* Features List */}
                     <div className="space-y-4">
-                      <h3 className="text-sm font-bold text-slate-900 uppercase tracking-widest flex items-center gap-2 border-b border-slate-200 pb-3">
+                      <h3 className="text-sm font-bold text-[#0A1628] uppercase tracking-widest flex items-center gap-2 border-b border-slate-200 pb-3">
                         <Cpu className="w-4 h-4 text-blue-600" />
                         <span>Key Features</span>
                       </h3>
@@ -190,7 +190,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate }) => {
 
                     {/* Use Cases List */}
                     <div className="space-y-4">
-                      <h3 className="text-sm font-bold text-slate-900 uppercase tracking-widest flex items-center gap-2 border-b border-slate-200 pb-3">
+                      <h3 className="text-sm font-bold text-[#0A1628] uppercase tracking-widest flex items-center gap-2 border-b border-slate-200 pb-3">
                         <Sparkles className="w-4 h-4 text-blue-600" />
                         <span>Use Cases</span>
                       </h3>

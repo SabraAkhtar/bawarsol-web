@@ -22,9 +22,9 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigate }) => {
             <span>Portfolio — Real Work, Real Results</span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0A1628] tracking-tight">
             Our Work & <br />
-            <span className="font-serif italic font-normal text-blue-600 accent-glow">
+            <span className="font-serif italic font-normal text-blue-600">
               Deployed Projects
             </span>
           </h1>
@@ -63,7 +63,7 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigate }) => {
               onClick={() => setActiveTab('web')}
               className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm transition-all ${
                 activeTab === 'web'
-                  ? 'bg-blue-600 text-black shadow-lg shadow-blue-600/25'
+                  ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/25'
                   : 'bg-slate-50 border border-slate-200 text-slate-500 border border-slate-200 hover:border-blue-600/40 hover:text-blue-600'
               }`}
             >
@@ -75,7 +75,7 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigate }) => {
               onClick={() => setActiveTab('ai')}
               className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm transition-all ${
                 activeTab === 'ai'
-                  ? 'bg-blue-600 text-black shadow-lg shadow-blue-600/25'
+                  ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/25'
                   : 'bg-slate-50 border border-slate-200 text-slate-500 border border-slate-200 hover:border-blue-600/40 hover:text-blue-600'
               }`}
             >
@@ -87,7 +87,7 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigate }) => {
               onClick={() => setActiveTab('design')}
               className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm transition-all ${
                 activeTab === 'design'
-                  ? 'bg-blue-600 text-black shadow-lg shadow-blue-600/25'
+                  ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/25'
                   : 'bg-slate-50 border border-slate-200 text-slate-500 border border-slate-200 hover:border-blue-600/40 hover:text-blue-600'
               }`}
             >
@@ -117,7 +117,7 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigate }) => {
                       }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-50 via-slate-50/20 to-transparent" />
-                    <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-blue-600 text-black backdrop-blur shadow-md">
+                    <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-blue-600 text-white backdrop-blur shadow-md">
                       {project.category}
                     </span>
                     <span className="absolute top-4 right-4 px-2.5 py-1 rounded-full text-[10px] font-mono bg-white/90 text-slate-600 border border-slate-200">
@@ -127,7 +127,7 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigate }) => {
 
                   {/* Content */}
                   <div className="p-6 space-y-3">
-                    <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug">
+                    <h3 className="text-lg font-bold text-[#0A1628] group-hover:text-blue-600 transition-colors leading-snug">
                       {project.title}
                     </h3>
                     <p className="text-slate-500 text-xs leading-relaxed line-clamp-2">
@@ -161,7 +161,7 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigate }) => {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl font-semibold text-xs text-black bg-blue-600 hover:bg-[#33F3FF] transition-all shadow-md shadow-blue-600/20"
+                      className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl font-semibold text-xs text-white bg-blue-600 hover:bg-blue-700 transition-all shadow-md shadow-blue-600/20"
                     >
                       <span>Live Website</span>
                       <ExternalLink className="w-3.5 h-3.5" />
@@ -178,7 +178,7 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigate }) => {
 
           {/* Bottom CTA */}
           <div className="mt-16 p-8 rounded-3xl bg-white shadow-sm border border-slate-200 backdrop-blur-xl border border-slate-200 text-center space-y-4">
-            <h3 className="text-2xl font-bold text-slate-900">Have a Project in Mind?</h3>
+            <h3 className="text-2xl font-bold text-[#0A1628]">Have a Project in Mind?</h3>
             <p className="text-slate-600 text-sm max-w-xl mx-auto">
               Whether it's a stunning website, an AI automation system, or a full SaaS platform — BawarSol engineers it to perfection.
             </p>
@@ -187,7 +187,7 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigate }) => {
                 onNavigate('/book-a-call');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm font-bold text-black bg-blue-600 hover:bg-[#33F3FF] transition-colors shadow-lg shadow-blue-600/20"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/20"
             >
               <span>Start Your Project →</span>
             </button>

@@ -81,9 +81,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
             <span>About BawarSol</span>
           </motion.div>
 
-          <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight">
+          <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0A1628] tracking-tight">
             Redefining <br />
-            <span className="font-serif italic font-normal text-blue-600 accent-glow">
+            <span className="font-serif italic font-normal text-blue-600">
               Digital Excellence
             </span>
           </motion.h1>
@@ -148,7 +148,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
         >
           <div className="text-center space-y-3">
             <motion.span variants={itemVariants} className="text-xs font-bold text-blue-600 uppercase tracking-widest block">What Drives Us</motion.span>
-            <motion.h2 variants={itemVariants} className="text-3xl sm:text-4xl font-extrabold text-slate-900">Our Core Values</motion.h2>
+            <motion.h2 variants={itemVariants} className="text-3xl sm:text-4xl font-extrabold text-[#0A1628]">Our Core Values</motion.h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -157,7 +157,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                 <div className="w-14 h-14 rounded-2xl bg-slate-100 border border-slate-200 flex items-center justify-center group-hover:bg-blue-600/10 group-hover:border-blue-600/40 transition-all">
                   {v.icon}
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">{v.title}</h3>
+                <h3 className="text-xl font-bold text-[#0A1628] group-hover:text-blue-600 transition-colors">{v.title}</h3>
                 <p className="text-slate-500 text-sm leading-relaxed">{v.desc}</p>
               </motion.div>
             ))}
@@ -177,7 +177,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-6">
               <motion.span variants={itemVariants} className="text-xs font-bold text-blue-600 uppercase tracking-widest block">Our Story</motion.span>
-              <motion.h2 variants={itemVariants} className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight">The Journey</motion.h2>
+              <motion.h2 variants={itemVariants} className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0A1628] leading-tight">The Journey</motion.h2>
               <motion.p variants={itemVariants} className="text-slate-600 text-base leading-relaxed">
                 What started as a boutique design studio has evolved into an international powerhouse. We continuously adapt to the shifting technological landscape, mastering React, Next.js, and advanced Artificial Intelligence to ensure our clients always receive best-in-class solutions.
               </motion.p>
@@ -187,7 +187,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
               <motion.div variants={itemVariants} className="pt-2">
                 <button
                   onClick={() => { onNavigate('/portfolio'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-bold text-sm text-black bg-blue-600 hover:bg-[#33F3FF] transition-all shadow-lg shadow-blue-600/20"
+                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-bold text-sm text-white bg-blue-600 hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20"
                 >
                   <span>See Our Work</span>
                   <ArrowRight className="w-4 h-4" />
@@ -230,7 +230,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
         >
           <div className="text-center space-y-3">
             <motion.span variants={itemVariants} className="text-xs font-bold text-blue-600 uppercase tracking-widest block">How We Work</motion.span>
-            <motion.h2 variants={itemVariants} className="text-3xl sm:text-4xl font-extrabold text-slate-900">Our Proven Process</motion.h2>
+            <motion.h2 variants={itemVariants} className="text-3xl sm:text-4xl font-extrabold text-[#0A1628]">Our Proven Process</motion.h2>
             <motion.p variants={itemVariants} className="text-slate-500 text-base max-w-xl mx-auto">
               A systematic approach to delivering premium results every time.
             </motion.p>
@@ -239,10 +239,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {process.map((p) => (
               <motion.div variants={itemVariants} key={p.step} className="p-6 rounded-3xl bg-white shadow-sm border border-slate-200 backdrop-blur-xl border border-slate-200 hover:border-blue-600/40 transition-all group space-y-4 hover:-translate-y-1">
-                <div className="w-12 h-12 rounded-2xl bg-blue-600/10 border border-blue-600/30 flex items-center justify-center text-blue-600 font-extrabold text-base group-hover:bg-blue-600 group-hover:text-black transition-colors">
+                <div className="w-12 h-12 rounded-2xl bg-blue-600/10 border border-blue-600/30 flex items-center justify-center text-blue-600 font-extrabold text-base group-hover:bg-blue-600 group-hover:text-white transition-colors">
                   {p.step}
                 </div>
-                <h3 className="font-bold text-lg text-slate-900 group-hover:text-blue-600 transition-colors">{p.title}</h3>
+                <h3 className="font-bold text-lg text-[#0A1628] group-hover:text-blue-600 transition-colors">{p.title}</h3>
                 <p className="text-slate-500 text-sm leading-relaxed">{p.desc}</p>
               </motion.div>
             ))}
@@ -261,7 +261,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
         >
           <div className="text-center space-y-3">
             <motion.span variants={itemVariants} className="text-xs font-bold text-blue-600 uppercase tracking-widest block">The Difference</motion.span>
-            <motion.h2 variants={itemVariants} className="text-3xl sm:text-4xl font-extrabold text-slate-900">Why Choose BawarSol?</motion.h2>
+            <motion.h2 variants={itemVariants} className="text-3xl sm:text-4xl font-extrabold text-[#0A1628]">Why Choose BawarSol?</motion.h2>
           </div>
 
           <motion.div variants={itemVariants} className="overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-sm backdrop-blur-xl">
